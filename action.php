@@ -15,6 +15,5 @@ foreach ($_POST as $el){
 $new_user = "INSERT INTO `users`(`nom`, `prenom`, `mail`, `mdp`) VALUES ('$nom','$prenom','$mail','$mdp')";
 $result = $conn->query($new_user);
 
-
 ?>
 
