@@ -8,8 +8,8 @@
 </head>
 <body>
     <?php
-    $message = "Vous êtes bien enregistré !";
-    echo "<script type='text/javascript'>alert('$message');</script>";
+    // $message = "Vous êtes bien enregistré !";
+    // echo "<script type='text/javascript'>alert('$message');</script>";
     ?>
     <form action="identification.php" method="post">
   

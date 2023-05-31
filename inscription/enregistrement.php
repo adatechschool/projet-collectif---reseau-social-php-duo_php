@@ -16,9 +16,6 @@ $new_user = "INSERT INTO `users`(`nom`, `prenom`, `mail`, `mdp`) VALUES ('$nom',
 $result = $conn->query($new_user);
 
 
-
-
-
 header('Location: ../connexion/connexion.php');
   exit();
 
