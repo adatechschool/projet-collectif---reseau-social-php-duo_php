@@ -1,0 +1,121 @@
+@media (max-width: 760px) {
+
+    /*------------------------- 
+     Style de l'ajout d'un jeu
+    --------------------------*/
+    .form-container{
+        background-color: aquamarine;
+        padding: 5px;
+        font-size: large;
+        display: grid;
+        grid-template-areas:
+        "title" 
+        "form";
+    }
+
+    .form-title{
+        grid-area: title;
+    }
+
+    .form{
+        grid-area: form;
+        display: grid;
+        grid-template-areas: 
+        "a"
+        "b"
+        "c"
+        "d"
+        "e"
+        "g"
+        "h";
+    }
+
+    .form-name{
+        grid-area: a;
+    }
+
+    .form-min-player{
+        grid-area: b;
+    }
+    
+    .form-max-player{
+        grid-area: c;
+    } 
+
+    .form-time{
+        grid-area: d;
+    } 
+
+    .container-select{
+        grid-area: e;
+        display: flex;
+    }
+
+    .form-niveau{
+        margin-right: 10px;
+    } 
+
+    .form-select{
+        width: 100px;
+        height: 25px;
+        align-self: center;
+    }
+
+    .form-description{
+        grid-area: g;
+    } 
+
+    .form-submit{
+        grid-area: h;
+    } 
+
+    .form-input-submit{
+        width: auto;
+        height: auto;
+        font-size: x-large;
+        border-radius: 10px;
+    }
+
+    /*-------------------------- 
+     Style de la liste des jeux
+    ---------------------------*/
+
+    .game-container{
+        background-color: rgba(210, 105, 30, 0.29);
+    }
+
+    .game-box{
+        background-color: rgba(0, 255, 255, 0.37);
+    }
+
+    .game-name{
+        background-color: darkviolet;
+    }
+
+    .game-img{
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .nb-min-player{
+        background-color: blueviolet;
+    }
+    
+    .nb-max-player{
+        background-color: brown;
+    }
+    
+    .game-time{
+        background-color: burlywood;
+    }
+    
+    .game-niveau{
+        background-color: darkgoldenrod;
+    }
+
+    .game-description{
+        background-color: chartreuse;
+    }
+    
+}
