@@ -7,7 +7,7 @@
     <title>Accueil</title>
 </head>
 <body>
-    <a href ="">Profil</a>
+    <a href ="./profil.php">Profil</a>
     <a href="#">Accueil</a>
     <button>Deconnexion</button>
 
