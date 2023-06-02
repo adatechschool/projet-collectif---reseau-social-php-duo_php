@@ -1,0 +1,22 @@
+
+
+.infos_modif{
+    background-color: rgb(189, 189, 189);
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    width : 60%;
+}
+
+.form_modif{
+    border : 1px solid black;
+    padding: 5px;
+    width :50%;
+    margin: 1px;
+}
+
+.newInput{
+    width: 90%;
+    padding: 2px;
+    margin: 1px;
+}
