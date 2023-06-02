@@ -7,23 +7,14 @@
     <title>Accueil</title>
 </head>
 <body>
-    <a href ="./profil.php">Profil</a>
+    <a href ="./profil/profil.php">Profil</a>
     <a href="#">Accueil</a>
     <button>Deconnexion</button>
 
-    <?php
-    session_start();// une fois par fichier 
-
-    echo "<p class=\"test\">";
-    echo "Bonjour ".$_SESSION["prenom"].", bienvenue!";
-    echo "</p>";
-    
-    ?>
-
     <p>
     <?php
-    // session_start();
-    echo "Bonjour ".$_SESSION["nom"].", bienvenue!";
+    session_start();
+    echo "Bonjour ".$_SESSION["prenom"]." ".$_SESSION["nom"].", bienvenue!";
     ?>
 
     </p>
