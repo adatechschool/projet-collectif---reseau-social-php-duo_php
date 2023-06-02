@@ -5,11 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style_profil.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../../style_navbar.css">
+    <title>Profil</title>
 </head>
 <body>
 
-<div> navBar </div>
+<nav>
+        <ul>
+            <li><a href="#"><img class="icone_jeux" src="../../images/jeu-de-plateau.png" alt="Icône Jeux"></a></li>
+            <li><a href="../accueil.php">Accueil</a></li>
+            <li><a href ="./profil/profil.php">Profil</a></li>
+            <li><a href="../../jeux/jeux.php">Jeux de Société</a></li>
+            <li><button class="deconnexion"><a href="../../deconnexion.php" class="button">Deconnexion</a></button></li>
+        </ul>
+    </nav>
 
 <div class = "profil">
 
@@ -34,7 +43,7 @@
 
     <div class="info_connexion"> Info <br>
         <?php 
-        include "../../connectdatabase.php";
+        // include "../../connectdatabase.php";
         session_start();
         echo "Prénom : ".$_SESSION["prenom"].'</br>';
         echo "Nom : ".$_SESSION["nom"].'</br>';
@@ -63,7 +72,7 @@
         <p>
             <label for="biographie">Biographie</label><br />
             <textarea name="ameliorer" id="ameliorer" rows="10" cols="50">
-                Qui es-tu
+                Qui es-tu?
             </textarea>      
         </p>
     </form>
