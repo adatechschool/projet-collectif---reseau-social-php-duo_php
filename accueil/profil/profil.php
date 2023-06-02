@@ -14,11 +14,22 @@
 <div class = "profil">
 
     <div class ="photo">
-        <form action="donnéephoto.php" method="POST" enctype="multipart/form-data" >
+        <form action="upload.php" method="POST" enctype="multipart/form-data" >
             <label for="file">Fichier</label>
             <input type="file" name="file">
             <button type="submit">Enregistrer</button>
         </form>
+
+        <?php 
+
+    include "../../connectdatabase.php";
+
+    $req = $conn->query('SELECT photo FROM photo');
+    while($data = $req->fetch()){
+        // var_dump($data);
+        echo "<img src='uploads/".$data['photo']."' width='300px' ><br>";
+    }
+        ?>
     </div>
 
     <div class="info_connexion"> Info <br>
