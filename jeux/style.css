@@ -1,0 +1,167 @@
+@media (max-width: 760px) {
+    body {
+        background-color: #0d0031;
+    }
+
+    /* 
+    #5aa9e6
+    #7161ef
+    #f9f9f9
+    #ffe45e
+    #ff6392 
+    */
+
+    /* 
+    #ffbe0b
+    #ffbe0b
+    #ffbe0b
+
+    
+    #fb5607
+
+
+    #ff006e
+
+
+    #8338ec
+
+
+    #3a86ff 
+    
+    */
+
+
+
+    /*------------------------- 
+     Style de l'ajout d'un jeu
+    --------------------------*/
+    .form-container{
+        padding: 0px 20px 20px 20px;
+        margin: 0px 10px 10px 10px;
+
+        border-radius: 10px;
+
+        box-shadow: 
+        0 0 10vw 0vw #fec119,
+        0 0 2vw 0.4vw #ffb700,
+
+        inset 0 0 .5vw 0.2vw #ffbe0b,
+        inset 0 0 0.2vw 0.2vw #ecae04,    
+        inset 0 0 .25vw 0.2vw #bd8b04;
+
+        font-size: large;
+        display: grid;
+        grid-template-areas:
+        "title" 
+        "form";
+    }
+
+    .form-title{
+        grid-area: title;
+        color: #ffbe0b;
+        text-shadow: 0 0 60px rgba(202,228,225,0.8);
+    }
+
+    .form{
+        color: #ffbe0b;
+        grid-area: form;
+        display: grid;
+        grid-template-areas: 
+        "a"
+        "b"
+        "c"
+        "d"
+        "e"
+        "g"
+        "h";
+    }
+
+    .form-name{
+        grid-area: a;
+    }
+
+    .form-min-player{
+        grid-area: b;
+    }
+    
+    .form-max-player{
+        grid-area: c;
+    } 
+
+    .form-time{
+        grid-area: d;
+    } 
+
+    .container-select{
+        grid-area: e;
+        display: flex;
+    }
+
+    .form-niveau{
+        margin-right: 10px;
+    } 
+
+    .form-select{
+        width: 100px;
+        height: 25px;
+        align-self: center;
+    }
+
+    .form-description{
+        grid-area: g;
+    } 
+
+    .form-submit{
+        grid-area: h;
+    } 
+
+    .form-input-submit{
+        width: auto;
+        height: auto;
+        font-size: x-large;
+        border-radius: 10px;
+    }
+
+    /*-------------------------- 
+     Style de la liste des jeux
+    ---------------------------*/
+
+    .game-container{
+        background-color: rgba(210, 105, 30, 0.29);
+    }
+
+    .game-box{
+        background-color: rgba(0, 255, 255, 0.37);
+    }
+
+    .game-name{
+        background-color: darkviolet;
+    }
+
+    .game-img{
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .nb-min-player{
+        background-color: blueviolet;
+    }
+    
+    .nb-max-player{
+        background-color: brown;
+    }
+    
+    .game-time{
+        background-color: burlywood;
+    }
+    
+    .game-niveau{
+        background-color: darkgoldenrod;
+    }
+
+    .game-description{
+        background-color: chartreuse;
+    }
+    
+}
