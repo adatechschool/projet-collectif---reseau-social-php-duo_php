@@ -39,15 +39,17 @@ if (isset($_GET['q']) && !empty($_GET['q'])) {
     if (empty($resultats)) {
         echo "Aucun résultat trouvé.";
     } else {
+        echo "<ul>";
         foreach ($resultats as $resultat) {
             // Récupérer le nom ou le prénom en fonction de la recherche
 
             /**
              * Idee : remplacer le profil.php par un userdetails.php en lecture seule (sans les formulaires).
              */
-            echo '<ul><li><a href="./profil/profil.php?id='.$resultat['id'].'">'.$resultat['nom'] .' ' . $resultat['prenom'] .'</a></li></ul>';
+            echo '<li><a href="./profil/profil.php?id='.$resultat['id'].'">'.$resultat['nom'] .' ' . $resultat['prenom'] .'</a></li>';
         
         }
+        echo "</ul>";
     }
 } else {
     echo "Veuillez entrer une requête de recherche.";
