@@ -21,7 +21,7 @@ function effectuerRecherche($q)
     
     $results = array(); // Tableau pour stocker les résultats de recherche
     
-    $requete = $conn->prepare('SELECT * FROM users WHERE nom LIKE :q OR prenom LIKE :q');
+    $requete = $conn->prepare('SELECT nom, prenom, id FROM users WHERE nom LIKE :q OR prenom LIKE :q');
     $requete->bindValue(':q', '%' . $q . '%');
     $requete->execute();
     
@@ -41,40 +41,18 @@ if (isset($_GET['q']) && !empty($_GET['q'])) {
     } else {
         foreach ($resultats as $resultat) {
             // Récupérer le nom ou le prénom en fonction de la recherche
-            if (stripos($resultat['nom'], $q) !== false) {
-                $affichage = $resultat['nom'];
-            } elseif (stripos($resultat['prenom'], $q) !== false) {
-                $affichage = $resultat['prenom'];
-            } else {
-                $affichage = '';
-            }
-            
-            if (!empty($affichage)) {
-                // Récupérer l'ID de l'utilisateur correspondant au résultat de recherche
-                $idUtilisateur = $resultat['id'];
 
-                // Récupérer les informations de l'utilisateur recherché
-                $requete = $conn->prepare('SELECT * FROM users WHERE id = :id');
-                $requete->bindValue(':id', $idUtilisateur);
-                $requete->execute();
-                $utilisateur = $requete->fetch();
-
-                // Afficher le lien vers le profil de l'utilisateur avec l'ID correspondant
-                echo "$idUtilisateur";
-                /**
-                 * Idee : remplacer le profil.php par un userdetails.php en lecture seule (sans les formulaires).
-                 */
-                echo '<ul><li><a href="./profil/profil.php?id='.$idUtilisateur.'">'.$affichage.'</a></li></ul>';
-            }
+            /**
+             * Idee : remplacer le profil.php par un userdetails.php en lecture seule (sans les formulaires).
+             */
+            echo '<ul><li><a href="./profil/profil.php?id='.$resultat['id'].'">'.$resultat['nom'] .' ' . $resultat['prenom'] .'</a></li></ul>';
+        
         }
     }
 } else {
     echo "Veuillez entrer une requête de recherche.";
 }
 ?>
-
-
-
 
 </body>
 </html>
