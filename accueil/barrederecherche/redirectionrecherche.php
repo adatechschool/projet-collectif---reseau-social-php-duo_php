@@ -53,14 +53,17 @@ if (isset($_GET['q']) && !empty($_GET['q'])) {
                 // Récupérer l'ID de l'utilisateur correspondant au résultat de recherche
                 $idUtilisateur = $resultat['id'];
 
-// Récupérer les informations de l'utilisateur recherché
-$requete = $conn->prepare('SELECT * FROM users WHERE id = :id');
-$requete->bindValue(':id', $idUtilisateur);
-$requete->execute();
-$utilisateur = $requete->fetch();
+                // Récupérer les informations de l'utilisateur recherché
+                $requete = $conn->prepare('SELECT * FROM users WHERE id = :id');
+                $requete->bindValue(':id', $idUtilisateur);
+                $requete->execute();
+                $utilisateur = $requete->fetch();
 
                 // Afficher le lien vers le profil de l'utilisateur avec l'ID correspondant
                 echo "$idUtilisateur";
+                /**
+                 * Idee : remplacer le profil.php par un userdetails.php en lecture seule (sans les formulaires).
+                 */
                 echo '<ul><li><a href="./profil/profil.php?id='.$idUtilisateur.'">'.$affichage.'</a></li></ul>';
             }
         }
