@@ -26,7 +26,8 @@
     
     <div>
         <?php
-        include "../accueil/barrederecherche/barrederecherche.php";
+        // include "../accueil/barrederecherche/barrederecherche.php";
+        include "../accueil/barrederecherche/redirectionrecherche.php";
         ?>
     </div>
 

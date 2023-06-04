@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,19 +13,19 @@
 <body>
 
 <nav>
-        <ul>
-            <li><a href="#"><img class="icone_jeux" src="../../images/jeu-de-plateau.png" alt="Icône Jeux"></a></li>
-            <li><a href="../accueil.php">Accueil</a></li>
-            <li><a href ="./profil/profil.php">Profil</a></li>
-            <li><a href="../../jeux/jeux.php">Jeux de Société</a></li>
-            <li><button class="deconnexion"><a href="../../deconnexion.php" class="button">Deconnexion</a></button></li>
-        </ul>
-    </nav>
+    <ul>
+        <li><a href="#"><img class="icone_jeux" src="../../images/jeu-de-plateau.png" alt="Icône Jeux"></a></li>
+        <li><a href="../accueil.php">Accueil</a></li>
+        <li><a href="./profil/profil.php">Profil</a></li>
+        <li><a href="../../jeux/jeux.php">Jeux de Société</a></li>
+        <li><button class="deconnexion"><a href="../../deconnexion.php" class="button">Deconnexion</a></button></li>
+    </ul>
+</nav>
 
-<div class = "profil">
+<div class="profil">
 
-    <div class ="photo">
-        <form action="upload.php" method="POST" enctype="multipart/form-data" >
+    <div class="photo">
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
             <label for="file">Fichier</label>
             <input type="file" name="file">
             <button type="submit">Enregistrer</button>
@@ -56,24 +58,22 @@
             </button>
         </form>
     </div>
-
 </div>
 
-<div class = "Info_perso_ajout">
-
+<div class="Info_perso_ajout">
     <form method="post" action="traitement.php">
         <p>
             <label for="pseudo">Ton pseudo:</label>
-            <input type="text" name="pseudo" id="pseudo" placeholder="Ex : luludu44" size="30" maxlength="10" />
+            <input type="text" name="pseudo" id="pseudo" placeholder="Ex : luludu44" size="30" maxlength="10"/>
         </p>
     </form>
 
     <form method="post" action="traitement.php">
         <p>
-            <label for="biographie">Biographie</label><br />
+            <label for="biographie">Biographie</label><br/>
             <textarea name="ameliorer" id="ameliorer" rows="10" cols="50">
                 Qui es-tu?
-            </textarea>      
+            </textarea>
         </p>
     </form>
 
@@ -88,14 +88,14 @@
         <input type="submit" value="Valider">
     </form>
 
-
     <form method="post" action="traitement.php">
         <p>
             <label for="pseudo">Ta ville:</label>
-            <input type="text" name="pseudo" id="pseudo" placeholder="Ex : Paris" size="30" maxlength="10" />
+            <input type="text" name="pseudo" id="pseudo" placeholder="Ex : Paris" size="30" maxlength="10"/>
         </p>
     </form>
 </div>
-    
+
 </body>
 </html>
+

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,9 +10,9 @@
 <form method = "GET">
         <input type="search" name="q" placeholder="Recherche" />
         <input type="submit" value="valider" />
-    </form>
+    </form> -->
 
-    <?php
+    <!-- <?php
     
     // include "../config.php";
     include "../accueil/../connectdatabase.php";
@@ -43,6 +43,61 @@
     } else{
         echo "ok";
     }
-    ?>
-</body>
-</html>
+    ?> -->
+
+<!-- <?php
+// Effectuez votre recherche et obtenez les résultats
+$resultats = effectuerRecherche();
+
+// Affichez les résultats
+foreach ($resultats as $resultat) {
+    // Affichez le résultat avec un lien cliquable
+    echo '<a href="page_de_destination.php?id=' . $resultat['id'] . '">' . $resultat['titre'] . '</a><br>';
+}
+?>
+
+<?php
+// include "../config.php";
+include "../accueil/../connectdatabase.php";
+
+function effectuerRecherche($q) {
+    global $conn;
+    
+    $results = array(); // Tableau pour stocker les résultats de recherche
+    
+    $nom = $conn->query('SELECT * FROM users WHERE nom LIKE "%'.$q.'%"');
+    $prenom = $conn->query('SELECT * FROM users WHERE prenom LIKE "%'.$q.'%"');
+    
+    $index = 0;
+    
+    while ($a = $nom->fetch()) {
+        $results[] = $a["nom"];
+        $index++;
+    }
+    
+    if ($index == 0) {
+        while ($b = $prenom->fetch()) {
+            $results[] = $b["prenom"];
+        }
+    }
+    
+    return $results;
+}
+
+if (isset($_GET['q']) && !empty($_GET['q'])) {
+    $q = $_GET['q'];
+    $resultats = effectuerRecherche($q);
+
+    if (empty($resultats)) {
+        echo "Aucun résultat trouvé.";
+    } else {
+        foreach ($resultats as $resultat) {
+            echo '<ul><li>'.$resultat.'</li></ul>';
+        }
+    }
+} else {
+    echo "Veuillez entrer une requête de recherche.";
+}
+?>   -->
+<!-- </body>
+</html> -->
