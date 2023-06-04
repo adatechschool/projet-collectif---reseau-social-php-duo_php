@@ -1,4 +1,17 @@
+<?php
+session_start();
 
+define('NOM', "nom");
+define('PRENOM', "prenom");
+define('MAIL', "mail");
+
+$utilisateurs = [
+    NOM => $_SESSION[NOM],
+    PRENOM => $_SESSION[PRENOM],
+    MAIL => $_SESSION[MAIL]
+];
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,10 +59,10 @@
     <div class="info_connexion"> Info <br>
         <?php 
         // include "../../connectdatabase.php";
-        session_start();
-        echo "Prénom : ".$_SESSION["prenom"].'</br>';
-        echo "Nom : ".$_SESSION["nom"].'</br>';
-        echo "Adresse Mail : ".$_SESSION["mail"].'</br>';
+        
+        echo "Prénom : ".$utilisateurs["prenom"].'</br>';
+        echo "Nom : ".$utilisateurs["nom"].'</br>';
+        echo "Adresse Mail : ".$utilisateurs["mail"].'</br>';
         ?>
 
         <form action="modification.php" method="post">
