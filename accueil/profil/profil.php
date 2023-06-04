@@ -1,15 +1,37 @@
 <?php
 session_start();
 
+include "../../connectdatabase.php";
+
 define('NOM', "nom");
 define('PRENOM', "prenom");
 define('MAIL', "mail");
+define ('GET_ID', "id");
 
-$utilisateurs = [
-    NOM => $_SESSION[NOM],
-    PRENOM => $_SESSION[PRENOM],
-    MAIL => $_SESSION[MAIL]
-];
+$utilisateurs = [];
+
+if(isset($_GET[GET_ID])) {
+    $currentId = $_GET[GET_ID];
+
+    $reqUser = $conn->prepare('SELECT nom, prenom, mail FROM users WHERE id = :currentId');
+    $reqUser->bindValue(':currentId', $currentId);
+    $reqUser->execute();
+
+    while($dataUser = $reqUser->fetch()){
+        $utilisateurs = [
+            NOM => $dataUser[NOM],
+            PRENOM => $dataUser[PRENOM],
+            MAIL => $dataUser[MAIL]
+        ];
+    }
+}
+else {
+    $utilisateurs = [
+        NOM => $_SESSION[NOM],
+        PRENOM => $_SESSION[PRENOM],
+        MAIL => $_SESSION[MAIL]
+    ];
+}
 
 ?>
 
@@ -29,7 +51,7 @@ $utilisateurs = [
     <ul>
         <li><a href="#"><img class="icone_jeux" src="../../images/jeu-de-plateau.png" alt="Icône Jeux"></a></li>
         <li><a href="../accueil.php">Accueil</a></li>
-        <li><a href="./profil/profil.php">Profil</a></li>
+        <li><a href="./profil.php">Profil</a></li>
         <li><a href="../../jeux/jeux.php">Jeux de Société</a></li>
         <li><button class="deconnexion"><a href="../../deconnexion.php" class="button">Deconnexion</a></button></li>
     </ul>
@@ -46,7 +68,6 @@ $utilisateurs = [
 
         <?php 
 
-    include "../../connectdatabase.php";
 
     $req = $conn->query('SELECT photo FROM photo');
     while($data = $req->fetch()){
@@ -111,4 +132,3 @@ $utilisateurs = [
 
 </body>
 </html>
-
