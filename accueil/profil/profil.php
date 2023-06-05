@@ -15,20 +15,22 @@
 
     <div class ="photo">
         <form action="upload.php" method="POST" enctype="multipart/form-data" >
-            <label for="file">Fichier</label>
+            <label for="file">Photo de profil</label>
             <input type="file" name="file">
             <button type="submit">Enregistrer</button>
+            <input type="file" name="photo">
+            <button type="submit">Modifier</button>
         </form>
 
         <?php 
 
     include "../../connectdatabase.php";
 
-    $req = $conn->query('SELECT photo FROM photo');
+    $req = $conn->query('SELECT photo FROM users');
     while($data = $req->fetch()){
         // var_dump($data);
         $cheminPhoto = $data['photo'];
-        echo "<img src='".$cheminPhoto."' width='300px'><br>";
+        echo "<img src='".$cheminPhoto."' width='300px'>";
     }
         ?>
     </div>

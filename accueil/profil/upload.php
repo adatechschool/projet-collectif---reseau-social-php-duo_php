@@ -18,10 +18,11 @@ if (isset($_FILES['file'])) {
         echo "Erreur";
     }
 
-    $req = $conn ->query("INSERT INTO `photo` (`photo`) VALUES ('$filePath')");
+    $req = $conn ->query("INSERT INTO `users` (`photo`) VALUES ('$filePath')");
     
 
-
+    header('Location: ./profil.php');
+    exit();
 }
 
 ?>
