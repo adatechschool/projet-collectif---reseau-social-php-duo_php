@@ -29,7 +29,7 @@
                 if (in_array($img_ex_lc, $allowed_ex)) {
                 $new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
                 $img_upload_path = 'uploads/'.$new_img_name;
-                $destination_path = '/home/guillaume/Documents/Ada_Tech_School/Projet_collectifs/projet-collectif---reseau-social-php-duo_php/jeux/' . $img_upload_path;
+                $destination_path = __DIR__ . '/' . $img_upload_path;
                 echo $destination_path;
 
                 move_uploaded_file($tmp_name, $destination_path);
