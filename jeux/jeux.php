@@ -12,12 +12,12 @@
     <input type="submit" name="logout" value="Déconnexion">
 </form>
 
-<!-- Le formulaire pour entrer un nouveau jeu dans le catalogue -->
+<?php // Le formulaire pour entrer un nouveau jeu dans le catalogue ?>
 
 <body>
     <div class="form-container">
         <h2 class="form-title">Ajout d'un jeu dans la liste</h2>
-            <form class="form" action="newgame.php" method="post">
+            <form class="form" action="newgame.php" method="post" enctype="multipart/form-data">
                 <p class="form-name">Nom du jeu : <input type="text" name="nom" /></p>
                 <p class="form-min-player">Combien de joueurs minimum : <input type="text" name="nb_min_joueurs" /></p>
                 <p class="form-max-player">Combien de joueurs maximum: <input type="text" name="nb_max_joueurs" /></p>
@@ -31,24 +31,26 @@
                         </select>
                 </div>
                 <p class="form-description">Ajoutez une description. (1000 caractères maximum) <input type="text" name="content" /></p>
+                <p class="form-img">Ajoutez une photo (format autorisé : jpg, png, jpeg) <input type="file" name="my_image">
                 <p class="form-submit"><input class="form-input-submit" type="submit" value="Ajouter votre jeu"></p>
             </form>
     </div>
+
+    <?php // Affichage du contenu de la table collection ?>
 
     <div class="game-container">
         <?php
         include "../connectdatabase.php";
             
-        $sql="SELECT * FROM `jeux` ORDER BY `jeux`.`nom` ASC";
-        $result = $conn->query($sql);
+        $sql_game="SELECT * FROM `jeux` ORDER BY `jeux`.`nom` ASC";
+        $result_game = $conn->query($sql_game);
 
-
-        while ($game = $result->fetch(PDO::FETCH_ASSOC))
+        while ($game = $result_game->fetch(PDO::FETCH_ASSOC))
         {
         ?>
         <div class="game-box">
             <h3 class="game-name"><?php echo $game['nom'] ?></h3>
-            <img class="game-img" src="../images/8b-ark-nova-cover.jpg">
+            <img class="game-img" src="./uploads/<?= $game['image_url'] ?>">
             <p class="nb-min-player"><?php echo $game['nb_min_joueurs']?></p>
             <p class="nb-max-player"><?php echo $game['nb_max_joueurs']?></p>
             <p class="game-time"><?php echo $game['temps_de_jeux']?></p>
@@ -61,6 +63,7 @@
                 <input type="hidden" name="temps_de_jeux" value="<?php echo $game['temps_de_jeux']; ?>">
                 <input type="hidden" name="niveau" value="<?php echo $game['niveau']; ?>">
                 <input type="hidden" name="content"value="<?php echo $game['content']; ?>">
+                <input type="hidden" name="my_image" value="<?php echo $game['image_url'] ?>" >
                 <button type="submit">Ajouter à la collection</button>
             </form>
         </div>
