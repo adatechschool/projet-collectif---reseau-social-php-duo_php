@@ -100,9 +100,19 @@ else {
 <div class="follow">
 <?php
 if(isset($_SESSION['id']) AND $_SESSION['id']!=GET_ID){ // permet d'afficher le bouton uniquement si on est connecté
+    $isFolloweeOrNot=$conn->prepare('SELECT * FROM follow WHERE idFollower = ? AND idFollowee=?');
+    $isFolloweeOrNot->execute(array($_SESSION['id'],$currentId));
+    $isFolloweeOrNot=$isFolloweeOrNot->rowCount();
+    if($isFolloweeOrNot==1){
+
+?>
+<button class="unfollow"><a href="./follow.php?followedid=<?php echo $currentId ;?>">Unfollow</a></button>
+<?php } 
+else {
 ?>
 <button class="follow_me"><a href="./follow.php?followedid=<?php echo $currentId ;?>">Follow Me</a></button>
-<?php } ?>
+<?php }
+} ?>
 </div>
 
 <div class="Info_perso_ajout">

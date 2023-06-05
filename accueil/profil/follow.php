@@ -4,7 +4,7 @@
     include "../../connectdatabase.php";
     $getFollowedId=intval($_GET['followedid']); //sécurise la variable
 
-    if($getFollowedId!= $_SESSION['id']){// evite de se suivre soit meme
+    if($getFollowedId!= $_SESSION['id']){// evite de se suivre soi meme
         $alreadyFollowed =$conn->prepare('SELECT * FROM follow WHERE idFollower = ? AND idFollowee=?');
         $alreadyFollowed ->execute(array($_SESSION['id'],$getFollowedId));
         $alreadyFollowed = $alreadyFollowed->rowCount();

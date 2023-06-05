@@ -20,3 +20,21 @@
     padding: 2px;
     margin: 1px;
 }
+
+/* .follow{
+    flex-direction: column;
+    justify-content: right;
+    align-items:end;
+} */
+
+.followers-list {
+    background-color: #de3232;
+    list-style-type: none;
+    padding: 0;
+}
+
+.follower-item {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-bottom: 5px;
+}
