@@ -1,0 +1,47 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400&display=swap');
+
+
+nav {
+  background-color: #f2f2f2;
+  padding: 10px;
+  font-family: 'Bangers', cursive;
+  font-size: 25px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li {
+  display: inline-block;
+}
+
+li a {
+  display: block;
+  color: #333;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #ddd;
+}
+
+.icone_jeux{
+  width: 65px;
+}
+
+.deconnexion,.connexion,.inscription{
+  font-family: 'Bangers', cursive;
+  border:solid 3px;
+  border-radius: 10px ;
+}
