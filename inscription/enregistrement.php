@@ -22,7 +22,7 @@ echo "Merci pour votre inscription 🙂";
 ?>
 <script>
     setTimeout(function() {
-      window.location.href = "../index.php";
+      window.location.href = "../connexion/connexion.php";
     }, 2500);
 </script>
 
