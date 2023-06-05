@@ -5,16 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../style_navbar.css">
     <title>Jeux</title>
 </head>
 
-<form action="../deconnexion/logout.php" method="POST">
+<!-- <form action="../deconnexion/logout.php" method="POST">
     <input type="submit" name="logout" value="Déconnexion">
-</form>
+</form> -->
 
 <?php // Le formulaire pour entrer un nouveau jeu dans le catalogue ?>
 
 <body>
+<nav>
+        <ul>
+            <li><a href="#"><img class="icone_jeux" src="../images/jeu-de-plateau.png" alt="Icône Jeux"></a></li>
+            <li><a href="../accueil/accueil.php">Accueil</a></li>
+            <li><a href ="../accueil/profil/profil.php">Profil</a></li>
+            <li><a href="#">Jeux de Société</a></li>
+            <li><button class="deconnexion"><a href="../deconnexion.php" class="button">Deconnexion</a></button></li>
+        </ul>
+    </nav>
     <div class="form-container">
         <h2 class="form-title">Ajout d'un jeu dans la liste</h2>
             <form class="form" action="newgame.php" method="post" enctype="multipart/form-data">
