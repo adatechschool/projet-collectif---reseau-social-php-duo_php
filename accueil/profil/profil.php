@@ -27,7 +27,8 @@
     $req = $conn->query('SELECT photo FROM photo');
     while($data = $req->fetch()){
         // var_dump($data);
-        echo "<img src='uploads/".$data['photo']."' width='300px' ><br>";
+        $cheminPhoto = $data['photo'];
+        echo "<img src='".$cheminPhoto."' width='300px'><br>";
     }
         ?>
     </div>
