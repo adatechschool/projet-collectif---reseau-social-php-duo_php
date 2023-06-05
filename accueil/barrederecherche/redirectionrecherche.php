@@ -13,7 +13,8 @@
 </form>
 
 <?php
-include "../connectdatabase.php";
+include "../accueil/../connectdatabase.php";
+
 
 function effectuerRecherche($q)
 {
@@ -46,7 +47,7 @@ if (isset($_GET['q']) && !empty($_GET['q'])) {
             /**
              * Idee : remplacer le profil.php par un userdetails.php en lecture seule (sans les formulaires).
              */
-            echo '<li><a href="./profil/profil.php?id='.$resultat['id'].'">'.$resultat['nom'] .' ' . $resultat['prenom'] .'</a></li>';
+            echo '<li><a href="./profil/profil_view.php?id='.$resultat['id'].'">'.$resultat['nom'] .' ' . $resultat['prenom'] .'</a></li>';
         
         }
         echo "</ul>";
