@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
 <form method = "GET">
         <input type="search" name="q" placeholder="Recherche" />
         <input type="submit" value="valider" />
-    </form>
+    </form> -->
 
     <?php   
     // include "../config.php";
