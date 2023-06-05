@@ -9,7 +9,9 @@
 </head>
 <body>
 
-<div> navBar </div>
+<div> navBar 
+    <a href="../accueil.php">Retour accueil</a>
+</div>
 
 <div class = "profil">
 
@@ -33,21 +35,22 @@
     </div>
 
     <div class="info_connexion"> Info <br>
-        <?php 
-        include "../../connectdatabase.php";
-        session_start();
-        echo "Prénom : ".$_SESSION["prenom"].'</br>';
-        echo "Nom : ".$_SESSION["nom"].'</br>';
-        echo "Adresse Mail : ".$_SESSION["mail"].'</br>';
-        ?>
-
-        <form action="modification.php" method="post">
-            <button>
-                <img src="./modify_icon.png" alt="">
-            </button>
-        </form>
+        <div>
+            <?php 
+            session_start();
+            echo "Prénom : ".$_SESSION["prenom"].'</br>';
+            echo "Nom : ".$_SESSION["nom"].'</br>';
+            echo "Adresse Mail : ".$_SESSION["mail"].'</br>';
+            ?>
+        </div>
+        <div>
+            <form action="modification.php" method="post">
+                <button>
+                    <img src="./modify_icon.png" alt="">
+                </button>
+            </form>
+        </div>    
     </div>
-
 </div>
 
 <div class = "Info_perso_ajout">

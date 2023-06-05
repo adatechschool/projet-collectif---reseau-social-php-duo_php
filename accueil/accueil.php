@@ -12,8 +12,8 @@
         <ul>
             <li><a href="#"><img class="icone_jeux" src="../images/jeu-de-plateau.png" alt="Icône Jeux"></a></li>
             <li><a href="#">Accueil</a></li>
-            <li><a href ="../profil/profil.php">Profil</a></li>
-            <li><a href="../jeux.php">Jeux de Société</a></li>
+            <li><a href ="./profil/profil.php">Profil</a></li>
+            <li><a href="../jeux/jeux.php">Jeux de Société</a></li>
             <li><button class="deconnexion"><a href="../deconnexion.php" class="button">Deconnexion</a></button></li>
         </ul>
     </nav>
@@ -53,7 +53,7 @@
 
     <?php
     include "../connectdatabase.php" ;
-
+    
     if(isset($_GET['q']) AND !empty($_GET['q'])) {
         $q = $_GET['q'];
         $nom= $conn->query('SELECT * From users WHERE nom LIKE "%'.$q.'%"' );
