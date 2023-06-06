@@ -62,6 +62,7 @@ h1{
     height: 100vh;
     font-family: 'Comic Neue';
     font-size: 20px;
+    
   }
   .button_container{
     display: flex;

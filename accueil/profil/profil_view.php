@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 
 include "../../connectdatabase.php";
 
@@ -46,20 +46,15 @@ else {
     <title>Profil</title>
 </head>
 <body>
-
-<nav>
-    <ul>
-        <li><a href="#"><img class="icone_jeux" src="../../images/jeu-de-plateau.png" alt="Icône Jeux"></a></li>
-        <li><a href="../accueil.php">Accueil</a></li>
-        <li><a href="./profil.php">Profil</a></li>
-        <li><a href="../../jeux/jeux.php">Jeux de Société</a></li>
-        <li><button class="deconnexion"><a href="../../deconnexion.php" class="button">Deconnexion</a></button></li>
-    </ul>
-</nav>
+<div>
+    <?php
+    include "../../navbar/navbar.php"
+    ?> 
+</div>
 
 <div class="profil">
 
-    <div class="photo">
+    <!-- <div class="photo">
         <form action="upload.php" method="POST" enctype="multipart/form-data">
             <label for="file">Fichier</label>
             <input type="file" name="file">
@@ -67,17 +62,15 @@ else {
         </form>
 
         <?php 
-
-
-    $req = $conn->query('SELECT photo FROM photo');
-    while($data = $req->fetch()){
-        // var_dump($data);
-        echo "<img src='uploads/".$data['photo']."' width='300px' ><br>";
-    }
+            $req = $conn->query('SELECT photo FROM photo');
+            while($data = $req->fetch()){
+            // var_dump($data);
+            echo "<img src='uploads/".$data['photo']."' width='300px' ><br>";
+            }
         ?>
-    </div>
+    </div> -->
 
-    <div class="info_connexion"> Info <br>
+    <div class="info_connexion"> <?php echo "Bienvenue sur le profil de : ".$utilisateurs["prenom"]."!" ?><br>
         <?php 
         // include "../../connectdatabase.php";
         
@@ -86,15 +79,15 @@ else {
         echo "Adresse Mail : ".$utilisateurs["mail"].'</br>';
         ?>
 
-        <form action="modification.php" method="post">
+        <!-- <form action="modification.php" method="post">
             <button>
                 <img src="./modify_icon.png" alt="">
             </button>
         </form>
     </div>
-</div>
+</div> -->
 
-<div class="Info_perso_ajout">
+<!-- <div class="Info_perso_ajout">
     <form method="post" action="traitement.php">
         <p>
             <label for="pseudo">Ton pseudo:</label>
@@ -128,7 +121,7 @@ else {
             <input type="text" name="pseudo" id="pseudo" placeholder="Ex : Paris" size="30" maxlength="10"/>
         </p>
     </form>
-</div>
+</div> -->
 
 </body>
 </html>
