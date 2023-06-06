@@ -4,10 +4,23 @@ include "../connectdatabase.php";
 $nom=$_POST["nom"];
 $prenom=$_POST["prenom"];
 $mail=$_POST["mail"];
+$mail2=$_POST["mail2"];
 $mdp=$_POST["mdp"];
 
+// if (isset($_POST['form_inscription']))
+// {
+  
+//   if(!empty($_POST["nom"]) AND !empty($_POST["prenom"]) AND !empty($_POST["mail"]) AND !empty($_POST["mail2"]) AND !empty($_POST["mdp"]))
+//   {
+//      $mdpsecure=sha1($mdp);
+//   }
+//   else 
+//   {
+//     $message= "Tous les champs doivent être complétés!";
+//   }
+// }
 
-// print_r($_POST);
+
 
 foreach ($_POST as $el){
     // echo $el.'</br>';

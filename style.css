@@ -1,7 +1,11 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400&display=swap');
-
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
 
 /* nav {
     background-color: #f2f2f2;
@@ -44,7 +48,7 @@ li a:hover {
     font-family: 'Bangers', cursive;
     border:solid 3px;
     border-radius: 10px ;
-} */
+}  */
 
 h1{
     font-family: 'Bangers', cursive;
@@ -75,13 +79,13 @@ h1{
   .button_container button a {
     text-decoration: none;
     color: #333;
-    
-  }
+  } 
+
   .connexion,.inscription{
     margin-right: 15px;
     height: 50%;
     width: 100%;
-  }
+  } 
 
   form {
     background-color: #f2f2f2;
@@ -93,7 +97,7 @@ h1{
     font-family: 'Comic Neue', sans-serif;
   }
   
-  input[type="text"],
+input[type="text"],
     input[type="email"],
     input[type="password"] {
   background-color: #ffffff;
@@ -108,4 +112,9 @@ input[type="submit"] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+  }
+
+  .inscription{
+    display: flex;
+    align-items: center;
   }
