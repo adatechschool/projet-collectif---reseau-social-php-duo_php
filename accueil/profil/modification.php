@@ -8,6 +8,13 @@
     <title>Document</title>
 </head>
 <body>
+
+<div>
+    <?php
+    include "../../navbar/navbar.php"
+    ?> 
+</div>
+
 <div class="infos_modif">
     <form action="confirmation_modif.php" method="POST" class="form_modif">
         <h2>Tes nouvelles infos :</h2> 
