@@ -1,0 +1,110 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400&display=swap');
+
+
+/* nav {
+    background-color: #f2f2f2;
+    padding: 10px;
+    font-family: 'Bangers', cursive;
+    font-size: 25px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li {
+    display: inline-block;
+}
+
+li a {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #ddd;
+}
+
+.icone_jeux{
+    width: 65px;
+}
+
+.deconnexion,.connexion,.inscription{
+    font-family: 'Bangers', cursive;
+    border:solid 3px;
+    border-radius: 10px ;
+} */
+
+h1{
+    font-family: 'Bangers', cursive;
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Comic Neue';
+    font-size: 20px;
+  }
+  .button_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    width: 30vh;
+    
+  }
+  .button_container button a {
+    text-decoration: none;
+    color: #333;
+    
+  }
+  .connexion,.inscription{
+    margin-right: 15px;
+    height: 50%;
+    width: 100%;
+  }
+
+  form {
+    background-color: #f2f2f2;
+    color: #333333;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    font-family: 'Comic Neue', sans-serif;
+  }
+  
+  input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+  background-color: #ffffff;
+  color: #333333;
+  border: 1px solid #dddddd;
+}
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
