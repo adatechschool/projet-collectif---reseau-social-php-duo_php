@@ -1,4 +1,4 @@
-<?php
+b<?php
     // include "../../connectdatabase.php";
 
     // session_start();
@@ -18,20 +18,16 @@
     if ($reqFollow ->rowCount()> 0) {
         
     // Afficher la liste des followees
-    echo "<div>";
-    echo "<h2>Liste des followees :</h2>";
-    echo "<ul class='followers-list'>";
+    echo "<div class=\"followee\">";
+    echo "<h2 class=\"titreh2\">Liste des followees</h2>";
+    echo "<ul class=\"follow-list\">";
     while ($row = $reqFollow->fetch()) {
         $nom = $row['nom'];
         $prenom = $row['prenom'];
         $followeeId = $row['id'];
-        
-        // echo "<li>Follower ID : $followerId</li>";
-        echo "$followeeId";
-        // echo "<li>Nom : $nom, Prénom : $prenom</li>";
-        // echo "Nom : $nom, Prénom : $prenom</br>";
-        echo "<li><a href='profil_view.php?id=$followeeId'>Nom : $nom, Prénom : $prenom</a></li>";
+        echo "<li class=\"follow-item\"><a href='profil_view.php?id=$followeeId'>$nom,$prenom</a></li></br>";
     }
+    echo "</ul>";
     echo"</div>";
     
 } else {
@@ -52,20 +48,17 @@ $reqFollower->execute();
 if ($reqFollower ->rowCount()> 0) {
 
 // Afficher la liste des followers
-echo "<h2>Liste des followers :</h2>";
-echo "<ul class='followers-list'>";
+echo "<div class=\"follower\">";
+echo "<h2 class=\"titreh2\">Liste des followers</h2>";
+echo "<ul class=\"follow-list\">";
 while ($row = $reqFollower->fetch()) {
-$nom = $row['nom'];
-$prenom = $row['prenom'];
-$followerId = $row['id'];
-
-// echo "<li>Follower ID : $followerId</li>";
-echo "$followerId";
-// echo "<li>Nom : $nom, Prénom : $prenom</li>";
-echo "Nom : $nom, Prénom : $prenom</br>";
+    $nom = $row['nom'];
+    $prenom = $row['prenom'];
+    $followerId = $row['id'];
+    echo "<li class=\"follow-item\"><a href='profil_view.php?id=$followerId'>$nom,$prenom</a></li></br>";
 }
-
-// echo "</ul>";
+echo "</ul>";
+echo"</div>";
 } else {
 echo "Aucun follower trouvé.";
 }

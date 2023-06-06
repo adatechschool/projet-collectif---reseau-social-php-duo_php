@@ -44,9 +44,7 @@ if (isset($_GET['q']) && !empty($_GET['q'])) {
         foreach ($resultats as $resultat) {
             // Récupérer le nom ou le prénom en fonction de la recherche
 
-            /**
-             * Idee : remplacer le profil.php par un userdetails.php en lecture seule (sans les formulaires).
-             */
+            
             echo '<li><a href="./profil/profil_view.php?id='.$resultat['id'].'">'.$resultat['nom'] .' ' . $resultat['prenom'] .'</a></li>';
         
         }
