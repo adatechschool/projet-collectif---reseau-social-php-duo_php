@@ -66,13 +66,16 @@ else {
             <button type="submit">Enregistrer</button>
         </form>
 
-        <?php 
+    <?php 
 
         
+    $id=$_SESSION['id'];
 
+    $req = $conn->prepare('SELECT photo FROM users WHERE id = :id');
+    $req->bindValue(':id', $id);
+    $req->execute();
 
-    $req = $conn->query('SELECT photo FROM users');
-    while($data = $req->fetch()){
+    while ($data = $req->fetch()) {
         // var_dump($data);
         $cheminPhoto = $data['photo'];
         echo "<img src='".$cheminPhoto."' width='300px'>";
