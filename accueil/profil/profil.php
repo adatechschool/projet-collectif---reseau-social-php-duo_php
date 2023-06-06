@@ -133,9 +133,11 @@ else {
     </div>
 
     <div class="follow">
+  
         <?php
         include "./afficher_follow.php"
         ?>
+       
     </div>
 
 </main>

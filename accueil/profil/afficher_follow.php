@@ -1,11 +1,11 @@
-b<?php
+<?php
     // include "../../connectdatabase.php";
 
     // session_start();
 
     
     // Récupérer les données des followees depuis la base de données
-
+    
     $sqlFollow ="SELECT followees.nom, followees.prenom,followees.id
                 FROM `follow` JOIN users AS followees ON followees.id=follow.idFollowee
                 WHERE follow.idFollower=:userId";
@@ -16,7 +16,7 @@ b<?php
 
     // Vérifier s'il y a des résultats
     if ($reqFollow ->rowCount()> 0) {
-        
+    
     // Afficher la liste des followees
     echo "<div class=\"followee\">";
     echo "<h2 class=\"titreh2\">Liste des followees</h2>";

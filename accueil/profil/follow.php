@@ -2,6 +2,7 @@
     session_start();
 
     include "../../connectdatabase.php";
+    
     $getFollowedId=intval($_GET['followedid']); //sécurise la variable
 
     if($getFollowedId!= $_SESSION['id']){// evite de se suivre soi meme
