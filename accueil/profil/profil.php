@@ -64,11 +64,11 @@ else {
             <label for="file">Photo de profil</label>
             <input type="file" name="file">
             <button type="submit">Enregistrer</button>
-            <input type="file" name="photo">
-            <button type="submit">Modifier</button>
         </form>
 
         <?php 
+
+        
 
 
     $req = $conn->query('SELECT photo FROM users');
@@ -76,6 +76,7 @@ else {
         // var_dump($data);
         $cheminPhoto = $data['photo'];
         echo "<img src='".$cheminPhoto."' width='300px'>";
+        
     }
         ?>
     </div>
