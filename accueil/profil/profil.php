@@ -60,23 +60,30 @@ else {
 <main class="profil_page">
     <div class="profil">
 
-        <div class="photo">
-            <form action="upload.php" method="POST" enctype="multipart/form-data">
-                <label for="file">Fichier</label>
-                <input type="file" name="file">
-                <button type="submit">Enregistrer</button>
-            </form>
+    <div class ="photo">
+        <form action="upload.php" method="POST" enctype="multipart/form-data" >
+            <label for="file">Photo de profil</label>
+            <input type="file" name="file">
+            <button type="submit">Enregistrer</button>
+        </form>
 
-            <?php 
+    <?php 
 
+        
+    $id=$_SESSION['id'];
 
-        $req = $conn->query('SELECT photo FROM photo');
-        while($data = $req->fetch()){
-            // var_dump($data);
-            echo "<img src='uploads/".$data['photo']."' width='300px' ><br>";
-        }
-            ?>
-        </div>
+    $req = $conn->prepare('SELECT photo FROM users WHERE id = :id');
+    $req->bindValue(':id', $id);
+    $req->execute();
+
+    while ($data = $req->fetch()) {
+        // var_dump($data);
+        $cheminPhoto = $data['photo'];
+        echo "<img src='".$cheminPhoto."' width='300px'>";
+        
+    }
+        ?>
+    </div>
 
         <div class="info_connexion"> Info <br>
             <?php 
@@ -123,23 +130,19 @@ else {
                 <input type="submit" value="Valider">
             </form>
 
-            <form method="post" action="traitement.php">
-                <p>
-                    <label for="pseudo">Ta ville:</label>
-                    <input type="text" name="pseudo" id="pseudo" placeholder="Ex : Paris" size="30" maxlength="10"/>
-                </p>
-            </form>
-        </div>
-    </div>
-
-    <div class="follow">
+    <form method="post" action="traitement.php">
+        <p>
+            <label for="pseudo">Ta ville:</label>
+            <input type="text" name="pseudo" id="pseudo" placeholder="Ex : Paris" size="30" maxlength="10"/>
+        </p>
+    </form>
+</div>
+<div class="follow">
   
         <?php
         include "./afficher_follow.php"
         ?>
        
     </div>
-
-</main>
 </body>
 </html>
