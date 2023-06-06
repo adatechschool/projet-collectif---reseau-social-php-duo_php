@@ -59,20 +59,27 @@ else {
 
 <div class="profil">
 
-    <div class="photo">
-        <form action="upload.php" method="POST" enctype="multipart/form-data">
-            <label for="file">Fichier</label>
+    <div class ="photo">
+        <form action="upload.php" method="POST" enctype="multipart/form-data" >
+            <label for="file">Photo de profil</label>
             <input type="file" name="file">
             <button type="submit">Enregistrer</button>
         </form>
 
-        <?php 
+    <?php 
 
+        
+    $id=$_SESSION['id'];
 
-    $req = $conn->query('SELECT photo FROM photo');
-    while($data = $req->fetch()){
+    $req = $conn->prepare('SELECT photo FROM users WHERE id = :id');
+    $req->bindValue(':id', $id);
+    $req->execute();
+
+    while ($data = $req->fetch()) {
         // var_dump($data);
-        echo "<img src='uploads/".$data['photo']."' width='300px' ><br>";
+        $cheminPhoto = $data['photo'];
+        echo "<img src='".$cheminPhoto."' width='300px'>";
+        
     }
         ?>
     </div>
