@@ -16,8 +16,9 @@
             if(isset($_POST['commentaire']) AND !empty($_POST['commentaire'])){
                 //$pseudo = $_POST["pseudo"];
                 $commentaire = $_POST["commentaire"];
+                $iduser=$_SESSION["id"];
                 //if(strlen($pseudo) < 25){
-                    $ins ="INSERT INTO `commentaire` (`commentaire`, `id_article`) VALUES ('$commentaire',1)";
+                    $ins ="INSERT INTO `commentaire` (`commentaire`, `id_article`,`id_user`) VALUES ('$commentaire',1,'$iduser')";
                     $result = $conn->query($ins);
                     $c_msg="<span style='color: green'> Votre commentaire a bien été posté </span>";                    
                 //}
@@ -30,28 +31,21 @@
             }
         }
         
-        $commentaires = "SELECT commentaire FROM commentaire WHERE id_article =1 ORDER BY id Desc ";
+        $commentaires = "SELECT commentaire, nom, prenom FROM commentaire INNER JOIN users ON commentaire.id_user = users.id WHERE id_article =1 ORDER BY commentaire.id Desc ";
         $resultCom = $conn->query($commentaires);
     ?>
     <br />
 
-    <div>    
-        <?php
-        $nomotheruser=  $conn->query('SELECT * From users WHERE id = 2');
-        while($a = $nomotheruser->fetch()) {
-            echo " Utilisateur : ".$a["nom"]." ".$a["prenom"];
-               }  
-         ?>  
-    </div>
-    <br />
-
     <div class="description"> 
         <?php
-    $id= $conn->query('SELECT * From articles WHERE id = 1');
-        while($a = $id->fetch()) {
-          echo "Post : ".$a["contenu"] ;
+    $res= $conn->query('SELECT contenu, nom, prenom From articles ar JOIN users u On u.id = ar.id_user WHERE ar.id = 1');
+        while($a = $res->fetch()) {
+            echo " Utilisateur : ".$a["nom"]." ".$a["prenom"];?> <br />
+            <?php 
+            echo "Post : ".$a["contenu"] ;
              } ?>
     </div>
+
     <div>
         <h4> Commentaires : </h4>
         <form method ="POST">           
@@ -73,9 +67,9 @@
             session_start();
             $nom = $_SESSION["nom"]; 
             $prenom = $_SESSION["prenom"];
-
+        
             while($c= $resultCom->fetch()){ ?>
-            <b><?= $nom. " ". $prenom ;         
+            <b><?= $c['nom']."  ".$c['prenom'] ;         
              
             ?> : </b> <?= $c['commentaire']; ?> <br />
             <?php } ?>
