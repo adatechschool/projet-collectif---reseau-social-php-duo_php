@@ -26,19 +26,19 @@
     <div class="form-container">
         <h3 class="form-title">Tu ne trouves pas ton jeu ? Ajoute-le au répertoire !</h3>
         <form class="form" action="newgame.php" method="post">
-            <p class="form-name">Nom du jeu : <br><input type="text" name="nom" /></p>
+            <p class="form-name">Nom du jeu : <br> <input type="text" name="nom" /></p>
             <p class="form-min-player">Combien de joueurs minimum : <input type="text" name="nb_min_joueurs" /></p>
             <p class="form-max-player">Combien de joueurs maximum : <input type="text" name="nb_max_joueurs" /></p>
             <p class="form-time">Quel est le temps de jeu estimé ? (en minutes) <input type="text" name="temps_de_jeux" /></p>
             <div class="container-select">
-                <p class="form-niveau">Quel est la difficultée du jeu ?</p>
+                <p class="form-niveau">Quel est la difficulté du jeu ?</p>
                     <select class="form-select" name="selectNiveau">
                         <option value="facile">Facile</option>
                         <option value="moyen">Moyen</option>
                         <option value="difficile">Difficile</option>
                     </select>
             </div>
-            <p class="form-description">Ajoutez une description. (1000 caractères maximum) <input type="text" name="content" /></p>
+            <p class="form-description">Ajoutez une description. (1000 caractères maximum) <textarea name="description" id="description" cols="30" rows="5"></textarea></p>
             <p class="form-submit "><input class="form-input-submit btn_add" type="submit" value="Ajouter ce jeu au répertoire"></p>
         </form>
     </div>
@@ -65,7 +65,7 @@
             <div class ="img_jeu">
                 <img class="game-img" src="../images/8b-ark-nova-cover.jpg">
                 <div class="like_game">
-                    <button><img src="../images/heart.png" alt=""></button>
+                    <button class="btn_like"><img src="../images/heart.png" alt=""></button>
                 </div>
             </div>
             <div class="details_jeu">

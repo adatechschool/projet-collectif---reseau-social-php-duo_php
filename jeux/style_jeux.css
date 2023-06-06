@@ -44,7 +44,7 @@ body{
 }
 
 #text_test_style{
-    width : 90%;
+    width : 100%;
 }
 
 .game-box{
@@ -82,11 +82,21 @@ body{
     display: flex;
     justify-content: flex-start;
     align-content: flex-start;
-    width: 100%;
+    width: 75%;
 }
 .like_game img{
     width : 20px;
 }
+.btn_like{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 4px;
+    border : none;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    margin-top : 4px;
+}
+
 .game-img{
     width : 75%;
 }
@@ -107,15 +117,22 @@ body{
 }
 
 .form-name input{
-    width:90%;
-    padding: 4px;
-    margin : 2px;
-    
+    width : 100%;
+    padding: 4px 0px 4px 4px;
+    margin : 2px 0px;
 }
 
 .form-min-player input, .form-max-player input, .form-time input{
-    width : 50%
+    width : 30%;
 }
-form input{
+form input, .form-select{
     font-family: 'Barlow Condensed', sans-serif;
+}
+.form-select{
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.form-description textarea{
+    width: 100%;
 }
