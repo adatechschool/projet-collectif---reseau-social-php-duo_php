@@ -1,7 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+.titreh2{
+    margin-bottom: 15px;
+    font-family: 'Bangers', cursive;
+}
 
 .infos_modif{
-    background-color: rgb(189, 189, 189);
+    /* background-color: rgb(189, 189, 189); */
+    background-color: rgb(233, 43, 43);
     display : flex;
     justify-content: center;
     align-items: center;
@@ -20,3 +33,60 @@
     padding: 2px;
     margin: 1px;
 }
+.profil_page{
+ display : flex;
+ justify-content: space-between;
+ align-items: center;
+ margin: 50px;
+}
+
+.profil{
+    flex-direction: column;
+    justify-content: right;
+}
+
+.followee, .follower{
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    
+    /* align-items:end; */
+}
+
+.follow-list{
+
+   flex-direction: column;
+   justify-content: space-between;
+   /* row-gap: 30px; */
+    /* background-color: #f2f2f2; */
+    list-style-type: none;
+    /* padding: 10px; */
+    
+}
+
+.follow-item {
+    /* background-color: #f2f2f2; */
+    /* padding: 10px; */
+    /* margin-bottom: 5px; */
+    list-style-type: none;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+  /* li {
+    display: inline-block;
+  }
+  
+  li a {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  } */
+  
+  li a:hover {
+    background-color: #ddd;
+  }
