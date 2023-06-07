@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,500;1,800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+}
+
+body {
+background-color: #E7EFEF;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+font-family: 'Barlow Condensed', sans-serif;
+}
+
+.container {
+background-color: #C4DEDE;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+width: 300px;
+height: 150px;
+}
+
+p {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+  }
