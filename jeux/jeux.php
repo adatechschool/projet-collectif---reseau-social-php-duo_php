@@ -68,45 +68,64 @@
         {
         ?>
         
-        <div class="game-box">
-            <div class="game-id" data-game-id="<?php echo $game['id']; ?>">
-                <div class ="img_jeu">
+        <!-- <div class="game-box">
+            <div class="game-id" data-game-id="<?php echo $game['id']; ?>"></div>
+                <div class="details_jeu">
+                    <h3 class="game-name">Nom du jeu : <?php echo $game['nom'] ?></h3>
                     <img class="game-img" src="./uploads/<?= $game['image_url'] ?>">
-                    <div class="like_game">
-                        <button><img src="../images/heart.png" alt=""></button>
-                    </div>
+                    <p class="nb-min-player">Nombre minimum de joueurs : <?php echo $game['nb_min_joueurs']?></p>
+                    <p class="nb-max-player">Nombre maximum de joueurs : <?php echo $game['nb_max_joueurs']?></p>
+                    <p class="game-time">Temps de jeu estimé : <?php echo $game['temps_de_jeux']?></p>
+                    <p class="game-niveau">Difficulté du jeu : <?php echo $game['niveau']?></p>
+                        <div class="game-description">Description : <br><?php echo $game['content']?></div>
+                            <form method="POST" action="addToCollection.php">
+                                <input type="hidden" name="nom" value="<?php echo $game['nom']; ?>">
+                                <input type="hidden" name="nb_min_joueurs" value="<?php echo $game['nb_min_joueurs']; ?>">
+                                <input type="hidden" name="nb_max_joueurs" value="<?php echo $game['nb_max_joueurs']; ?>">
+                                <input type="hidden" name="temps_de_jeux" value="<?php echo $game['temps_de_jeux']; ?>">
+                                <input type="hidden" name="niveau" value="<?php echo $game['niveau']; ?>">
+                                <input type="hidden" name="content"value="<?php echo $game['content']; ?>">
+                                <input type="hidden" name="my_image" value="<?php echo $game['image_url'] ?>" >
+                                <button class="btn_add" type="submit">Ajouter à ma collection</button>
+                            </form>
+                        <div class="game-like">
+                            <p class="game-count-like"> <?php echo $game['liked'] ?> </p>
+                            <button class="game-button" type="button" name="like" onclick="update()">
+                                <img class="game-like-img" src="../images/like.png" alt="symbole like"/>
+                            </button>
+                        </div>
                 </div>
             </div>
+        </div> -->
+
+        <div class="game-box">
+            <div class="game-id" data-game-id="<?php echo $game['id']; ?>">
                 <div class="details_jeu">
-                    <h3 class="game-name"><?php echo "Nom du jeu : ".$game['nom'] ?></h3>
-                    <p class="nb-min-player"><?php echo "Nombre minimum de joueurs : ".$game['nb_min_joueurs']?></p>
-                    <p class="nb-max-player"><?php echo "Nombre maximum de joueurs : ".$game['nb_max_joueurs']?></p>
-                    <p class="game-time"><?php echo "Temps de jeu estimé : ".$game['temps_de_jeux']?></p>
-                    <p class="game-niveau"><?php echo "Difficulté du jeu : ".$game['niveau']?></p>
-                    <div class="game-description"><?php echo "Description : <br>".$game['content']?></div>
-                    <form method="POST" action="addToCollection.php">
-                        <input type="hidden" name="nom" value="<?php echo $game['nom']; ?>">
-                        <input type="hidden" name="nb_min_joueurs" value="<?php echo $game['nb_min_joueurs']; ?>">
-                        <input type="hidden" name="nb_max_joueurs" value="<?php echo $game['nb_max_joueurs']; ?>">
-                        <input type="hidden" name="temps_de_jeux" value="<?php echo $game['temps_de_jeux']; ?>">
-                        <input type="hidden" name="niveau" value="<?php echo $game['niveau']; ?>">
-                        <input type="hidden" name="content"value="<?php echo $game['content']; ?>">
-                    <input type="hidden" name="my_image" value="<?php echo $game['image_url'] ?>" >
-                        <button class="btn_add" type="submit">Ajouter à ma collection</button>
-                    </form>
-                    <div class="game-like">
-                        <p class="game-count-like"> <?php echo $game['liked'] ?> </p>
-
-
-
-                        <button class="game-button" type="button" name="like" onclick="update()">
-                            <img class="game-like-img" src="../images/like.png" alt="symbole like"/>
-                        </button>
-
-
-
-                     </div>
+                    <h3 class="game-name">Nom du jeu : <?php echo $game['nom'] ?></h3>
+                    <img class="game-img" src="./uploads/<?= $game['image_url'] ?>">
+                    <p class="nb-min-player">Nombre minimum de joueurs : <?php echo $game['nb_min_joueurs']?></p>
+                    <p class="nb-max-player">Nombre maximum de joueurs : <?php echo $game['nb_max_joueurs']?></p>
+                    <p class="game-time">Temps de jeu estimé : <?php echo $game['temps_de_jeux']?></p>
+                    <p class="game-niveau">Difficulté du jeu : <?php echo $game['niveau']?></p>
+                        <div class="game-description">Description : <br> <?php echo $game['content']?></div>
+                            <form method="POST" action="addToCollection.php">
+                                <input type="hidden" name="nom" value="<?php echo $game['nom']; ?>">
+                                <input type="hidden" name="nb_min_joueurs" value="<?php echo $game['nb_min_joueurs']; ?>">
+                                <input type="hidden" name="nb_max_joueurs" value="<?php echo $game['nb_max_joueurs']; ?>">
+                                <input type="hidden" name="temps_de_jeux" value="<?php echo $game['temps_de_jeux']; ?>">
+                                <input type="hidden" name="niveau" value="<?php echo $game['niveau']; ?>">
+                                <input type="hidden" name="content"value="<?php echo $game['content']; ?>">
+                                <input type="hidden" name="my_image" value="<?php echo $game['image_url'] ?>" >
+                                <button class="btn_add" type="submit">Ajouter à ma collection</button>
+                            </form>
+                        <div class="game-like">
+                            <p class="game-count-like"> <?php echo $game['liked'] ?> </p>
+                            <button class="game-button" type="button" name="like" onclick="update()">
+                                <img class="game-like-img" src="../images/like.png" alt="symbole like"/>
+                            </button>
+                        </div>
                 </div>
+            </div>
         </div>
         <?php
         // ENTRE CES DEUX COMMENTAIRES JE PEUX ENCORE UTILISER $GAME
@@ -116,24 +135,7 @@
         }
         ?>
         <script>
-            // LA OU JE DOIS JQUERRY !!!!!
-        // function update () {
-
-        //     $.ajax({
-        //         type: "GET",
-        //         url: "./updateLike.php",
-                
-        //         success: function(data) {
-        //             // je dois traiter les datas ici
-
-        //             console.log(data);
-        //         },
-        //         error: function(xhr, status, error) {
-        //             // je sais pas ce que j'écris encore ici
-        //             console.error(status + ": " + error);
-        //         }
-        //     });
-        // }
+        // LA OU JE DOIS JQUERRY !!!!!
 
         // CELUI LA MARCHE
 
@@ -160,33 +162,6 @@
                 }
             });
         }
-
-
-        // CELUI LA UPDATE EN TEMPS REEL AU CLIC SANS REFRESH LA PAGE
-        // function update() {
-        //     var game_id = $(event.target).closest('.game-id').data('game-id');
-        //     var game_count_like = $(event.target).closest('.game-like').find('.game-count-like');
-
-        //     $.ajax({
-        //         type: "GET",
-        //         url: "./updateLike.php",
-        //         data: {
-        //             id: game_id
-        //         },
-        //         success: function(data) {
-        //             if (!isNaN(data)) {
-        //                 game_count_like.text(data);
-        //             } else {
-        //                 console.error(data);
-        //             }
-        //         },
-        //         error: function(xhr, status, error) {
-        //             console.error(status + ": " + error);
-        //         }
-        //     });
-        // }
-
-
         </script>
     </div>
 </body>
