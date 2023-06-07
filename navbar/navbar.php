@@ -26,7 +26,7 @@
             <li><a href="/projet-collectif---reseau-social-php-duo_php/jeux/jeux.php">Jeux de Société</a></li>
             <li><a href ="/projet-collectif---reseau-social-php-duo_php/accueil/profil/profil.php">Mon profil</a></li>
              
-        <a href="../deconnexion.php">
+        <a href="/projet-collectif---reseau-social-php-duo_php/deconnexion.php">
             <button id="deconnexion"> 
                 <img src="/projet-collectif---reseau-social-php-duo_php/images/icon_off.png" alt="icone off">
                 Deconnexion

@@ -52,93 +52,101 @@ else {
 ?>
 
 
+<div id="container_page">
 
-<main class="profil_page">
+<div class="profil_page">
     <div class="profil">
+        <div class = "profil_container">
+            <div class="presentation_profil">
+                <div class ="photo">
+                    <form action="upload.php" method="POST" enctype="multipart/form-data" >
+                        <label for="file"> <strong> Photo de profil </strong><br></label>
+                        <input type="file" name="file">
+                        <button class="btn_choose" type="submit">Enregistrer</button>
+                    </form>
 
-    <div class ="photo">
-        <form action="upload.php" method="POST" enctype="multipart/form-data" >
-            <label for="file">Photo de profil</label>
-            <input type="file" name="file">
-            <button type="submit">Enregistrer</button>
-        </form>
+                    <?php 
+                    $id=$_SESSION['id'];
 
-    <?php 
+                    $req = $conn->prepare('SELECT photo FROM users WHERE id = :id');
+                    $req->bindValue(':id', $id);
+                    $req->execute();
 
-        
-    $id=$_SESSION['id'];
+                    while ($data = $req->fetch()) {
+                        // var_dump($data);
+                        $cheminPhoto = $data['photo'];
+                        echo "<img src='".$cheminPhoto."' width='300px'>";
+                    }
+                    ?>
+                </div>
+                <h3> Informations de connexion :</h3><br>
+                <div class="info_connexion">
+                    <?php 
+                    // include "../../connectdatabase.php";
+                    
+                    echo "Prénom : ".$utilisateurs["prenom"].'</br>';
+                    echo "Nom : ".$utilisateurs["nom"].'</br>';
+                    echo "Adresse Mail : ".$utilisateurs["mail"].'</br>';
+                    ?>
 
-    $req = $conn->prepare('SELECT photo FROM users WHERE id = :id');
-    $req->bindValue(':id', $id);
-    $req->execute();
-
-    while ($data = $req->fetch()) {
-        // var_dump($data);
-        $cheminPhoto = $data['photo'];
-        echo "<img src='".$cheminPhoto."' width='300px'>";
-        
-    }
-        ?>
-    </div>
-
-        <div class="info_connexion"> Info <br>
-            <?php 
-            // include "../../connectdatabase.php";
+                    <div class="modif">
+                        <form action="modification.php" method="post">
+                            <button id="btn_modif">
+                                <img src="./modify_icon.png" alt="">
+                            </button>
+                        </form> 
+                    </div>
+                </div>
+                
+                
+            </div>
             
-            echo "Prénom : ".$utilisateurs["prenom"].'</br>';
-            echo "Nom : ".$utilisateurs["nom"].'</br>';
-            echo "Adresse Mail : ".$utilisateurs["mail"].'</br>';
-            ?>
+            <div class="Info_perso_ajout">
+                <h3>Informations complémentaires : </h3>
+                <form method="post" action="traitement.php">
+                    <p>
+                        <label for="pseudo">Ton pseudo:</label>
+                        <input type="text" name="pseudo" id="pseudo" placeholder="Ex : luludu44" size="30" maxlength="10"/>
+                    </p>
+                </form>
 
-            <form action="modification.php" method="post">
-                <button>
-                    <img src="./modify_icon.png" alt="">
-                </button>
-            </form>
+                <form method="post" action="traitement.php">
+                    <p>
+                        <label for="biographie">Biographie</label><br/>
+                        <textarea name="ameliorer" id="ameliorer" rows="10" cols="50">
+                        Qui es-tu?
+                        </textarea>
+                    </p>
+                </form>
+
+                <form method="post" action="Niveau.php">
+                    <label for="level-select">Quel est ton niveau de jeu ?</label>
+                    <select name="niveau" id="">
+                        <option value="">--</option>
+                        <option value="">Débutant</option>
+                        <option value="">Initié</option>
+                        <option value="">Archi-FAN !</option>
+                    </select>
+                    <input type="submit" class="btn_choose" value="Valider">
+                </form>
+
+                <form method="post" action="traitement.php">
+                    <p>
+                    <label for="pseudo">Ta ville:</label>
+                    <input type="text" name="pseudo" id="pseudo" placeholder="Ex : Paris" size="30" maxlength="10"/>
+                    </p>
+                </form>
+            </div>
         </div>
-
-
-        <div class="Info_perso_ajout">
-            <form method="post" action="traitement.php">
-                <p>
-                    <label for="pseudo">Ton pseudo:</label>
-                    <input type="text" name="pseudo" id="pseudo" placeholder="Ex : luludu44" size="30" maxlength="10"/>
-                </p>
-            </form>
-
-            <form method="post" action="traitement.php">
-                <p>
-                    <label for="biographie">Biographie</label><br/>
-                    <textarea name="ameliorer" id="ameliorer" rows="10" cols="50">
-                    Qui es-tu?
-                    </textarea>
-                </p>
-            </form>
-
-            <form method="post" action="Niveau.php">
-                <label for="level-select">Quel est ton niveau ?</label>
-                <select name="niveau" id="">
-                    <option value="">Choisie ton niveau</option>
-                    <option value="">Débutant</option>
-                    <option value="">Initié</option>
-                    <option value="">Archi-FAN !</option>
-                </select>
-                <input type="submit" value="Valider">
-            </form>
-
-    <form method="post" action="traitement.php">
-        <p>
-            <label for="pseudo">Ta ville:</label>
-            <input type="text" name="pseudo" id="pseudo" placeholder="Ex : Paris" size="30" maxlength="10"/>
-        </p>
-    </form>
-</div>
-<div class="follow">
-  
-        <?php
-        include "./afficher_follow.php"
-        ?>
+    
+        <div class="follow">
+            <?php
+            include "./afficher_follow.php"
+            ?>
        
+        </div>
     </div>
+</div>
+</div>
 </body>
 </html>

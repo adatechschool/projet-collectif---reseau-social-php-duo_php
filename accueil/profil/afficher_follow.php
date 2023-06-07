@@ -19,7 +19,7 @@
     
     // Afficher la liste des followees
     echo "<div class=\"followee\">";
-    echo "<h2 class=\"titreh2\">Liste des followees</h2>";
+    echo "<h2 class=\"titreh2\">Liste des abonnements </h2>";
     echo "<ul class=\"follow-list\">";
     while ($row = $reqFollow->fetch()) {
         $nom = $row['nom'];
@@ -31,7 +31,7 @@
     echo"</div>";
     
 } else {
-    echo "Aucun follower trouvé.";
+    echo "Aucun abonnement trouvé.";
 }
 
 // Récupérer les données des followers depuis la base de données
@@ -43,13 +43,13 @@ $sqlFollower ="SELECT followers.nom, followers.prenom,followers.id
 $reqFollower = $conn->prepare($sqlFollower);
 $reqFollower->bindValue(':userId',$_SESSION["id"]);
 $reqFollower->execute();
+echo "<div class=\"follower\">";
+echo "<h2 class=\"titreh2\">Liste de tes followers</h2>";
 
 // Vérifier s'il y a des résultats
 if ($reqFollower ->rowCount()> 0) {
 
 // Afficher la liste des followers
-echo "<div class=\"follower\">";
-echo "<h2 class=\"titreh2\">Liste des followers</h2>";
 echo "<ul class=\"follow-list\">";
 while ($row = $reqFollower->fetch()) {
     $nom = $row['nom'];
