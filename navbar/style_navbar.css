@@ -1,0 +1,93 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,500;1,800&display=swap');
+
+
+nav {
+  background-color: #E7EFEF;
+  padding: 10px;
+  font-family: 'Bangers', cursive;
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+ margin-bottom: 5px;
+}
+
+.nav_accueil{
+  gap: 40px;
+}
+.nav_accueil a{
+  padding:4px;
+}
+.nav_profil{
+  gap:60px;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.nav_accueil li a, .nav_profil li a {
+  display: block;
+  color: #333;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav_accueil li a:hover, .nav_profil li a:hover {
+  background-color: #ddd;
+}
+
+.icone_jeux{
+  width: 65px;
+}
+
+.connexion,.inscription{
+  font-family: 'Bangers', cursive;
+  border:solid 2px;
+  border-radius: 10px ;
+}
+
+#bienvenue{
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 20px;
+  padding : 10px;
+}
+
+#deconnexion{
+  font-family: 'Barlow Condensed', sans-serif;
+  margin:4px;
+  padding: 5px 6px;
+  font-size: 14px;
+  cursor:pointer;
+  text-decoration: none;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  border :none;
+  border-radius: 4px;
+  background-color: #E7EFEF;
+}
+a {
+  text-decoration: none;
+}
+
+#deconnexion:hover{
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+#deconnexion img{
+  width:30px;
+}
+

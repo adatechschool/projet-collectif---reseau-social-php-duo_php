@@ -8,13 +8,30 @@
     <title>Inscription</title>
 </head>
 <body>
-    <form action="enregistrement.php" method="post">
-    <p>Votre nom : <input type="text" name="nom" /></p>
-    <p>Votre prenom : <input type="text" name="prenom" /></p>
-    <p>Votre mail: <input type="text" name="mail" /></p>
-    <p>Votre mot de passe: <input type="password" name="mdp" /></p>
-    <p><input type="submit" value="OK"></p>
-    </form>
+    <div class="inscription">
+        <h2>Inscription</h2>
+        <form action="enregistrement.php" method="post">
+            
+                    <label for="nom">Votre nom :</label> <input type="text" name="nom" id="nom" placeholder="Votre nom"/></br>
+                   
+                    <label for="prenom">Votre prenom : </label><input type="text" name="prenom" id="prenom" placeholder="Votre prenom"/></br>
+                    
+                    <label for="mail">Votre mail:</label></label> <input type="email" name="mail" id="mail" placeholder="Votre mail"/></br>
+                   
+                    <label for="mail2">Confirmez votre mail:</label></label> <input type="email" name="mail2" id="mail2" placeholder="Confirmez votre mail"/></br>
+                    
+                    <label for="mdp">Votre mot de passe: </label><input type="password" name="mdp" id="mdp" placeholder="Votre mot de passe"/></br></br>
+                 
+                    <p><input type="submit"  name ="form_inscription" value="OK"></p>
+             
+        </form>
+        <?php
+        if (isset($message))
+        {
+            echo '<font color ="red">'.$message."</font>";
+        }
+        ?>
+    </div>
 </body>
 </html>
 

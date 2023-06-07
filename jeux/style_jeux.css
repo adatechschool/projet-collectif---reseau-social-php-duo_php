@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,500;1,800&display=swap');
+body{
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+#header_coll{
+    font-size: 25px;
+    margin-left: 3%;
+}
+.main_page{
+    background-color: #E7EFEF;
+    border-radius: 4px;
+    box-shadow: #C4DEDE 0px 1px 4px;
+    display: flex;
+    flex-direction: row-reverse;
+    padding : 15px;
+    margin : 3%;
+}
+.form-container{
+    background-color: #C4DEDE;
+    box-shadow: #C4DEDE 0px 1px 4px;
+    border-radius: 4px;
+    width: 40%;
+    margin: 10px;
+    padding: 10px;
+    height: fit-content;
+}
+.game-container{
+    background-color: #C4DEDE;
+    box-shadow: #C4DEDE 0px 1px 4px;
+    border-radius: 4px;
+    width: 60%;
+    margin: 10px 30px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    padding : 10px;
+}
+
+.search_bar_test_style{
+    background-color: #C4DEDE;
+    border-radius: 4px;
+    box-shadow: #C4DEDE 0px 1px 4px;
+    padding : 5px;
+}
+
+#text_test_style{
+    width : 90%;
+}
+
+.game-box{
+    display: flex;
+    padding : 5px;
+    background-color: #C4DEDE;
+    margin: 8px;
+    box-shadow: #8baeae 0px 1px 3px 0px, #8eb7b7 0px 0px 0px 1px;
+    border-radius: 4px;
+}
+
+.details_jeu{
+    display: flex;
+    flex-direction: column;
+    background-color: #F1FBFB;
+    border-radius: 4px;
+    width : 60%;
+    margin : 10px 20px 10px 0px;
+    padding : 4px;
+}
+
+.details_jeu p{
+    line-height: 8px;
+}
+
+.img_jeu{
+    margin : 5px;
+    width : 40%;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.like_game{
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    width: 100%;
+}
+.like_game img{
+    width : 20px;
+}
+.game-img{
+    width : 75%;
+}
+
+.btn_add{
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #3c4f4f;
+    color : white;
+    padding : 4px;
+    margin : 6px 0px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+}
+
+.btn_add:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.form-name input{
+    width:90%;
+    padding: 4px;
+    margin : 2px;
+    
+}
+
+.form-min-player input, .form-max-player input, .form-time input{
+    width : 50%
+}
+form input{
+    font-family: 'Barlow Condensed', sans-serif;
+}
