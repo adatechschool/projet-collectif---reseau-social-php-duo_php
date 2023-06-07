@@ -6,7 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet" />
     <link rel="stylesheet" href="../style_navbar.css">
-    <title>Jeux</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>    <title>Jeux</title>
+    <style>
+        img {
+            height: 200px;
+            width: 200px;
+            
+        }
+    </style>
 </head>
 
 <!-- <form action="../deconnexion/logout.php" method="POST">
@@ -51,6 +61,7 @@
     <div class="game-container">
         <?php
         include "../connectdatabase.php";
+        session_start();
             
         $sql_game="SELECT * FROM `jeux` ORDER BY `jeux`.`nom` ASC";
         $result_game = $conn->query($sql_game);
@@ -59,6 +70,7 @@
         {
         ?>
         <div class="game-box">
+            <div class="game-id" data-game-id="<?php echo $game['id']; ?>">
             <h3 class="game-name"><?php echo $game['nom'] ?></h3>
             <img class="game-img" src="./uploads/<?= $game['image_url'] ?>">
             <p class="nb-min-player"><?php echo $game['nb_min_joueurs']?></p>
@@ -76,10 +88,100 @@
                 <input type="hidden" name="my_image" value="<?php echo $game['image_url'] ?>" >
                 <button type="submit">Ajouter à la collection</button>
             </form>
+            <div class="game-like">
+                <p class="game-count-like"> <?php echo $game['liked'] ?> </p>
+
+
+
+                <button class="game-button" type="button" name="like" onclick="update()">
+                    <img class="game-like-img" src="../images/like.png" alt="symbole like"/>
+                </button>
+
+
+
+            </div>
         </div>
         <?php
+        // ENTRE CES DEUX COMMENTAIRES JE PEUX ENCORE UTILISER $GAME
+         include "./updateLike.php";        
+         
+        // ENTRE CES DEUX COMMENTAIRES JE PEUX ENCORE UTILISER $GAME
         }
         ?>
+
+        <script>
+            // LA OU JE DOIS JQUERRY !!!!!
+        // function update () {
+
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "./updateLike.php",
+                
+        //         success: function(data) {
+        //             // je dois traiter les datas ici
+
+        //             console.log(data);
+        //         },
+        //         error: function(xhr, status, error) {
+        //             // je sais pas ce que j'écris encore ici
+        //             console.error(status + ": " + error);
+        //         }
+        //     });
+        // }
+
+        // CELUI LA MARCHE
+
+        function update() {
+            // Récupérer l'identifiant du jeu
+            var gameId = $(event.target).closest('.game-id').data('game-id');
+            var game_count_like = $(event.target).closest('.game-like').find('.game-count-like');
+
+            $.ajax({
+                type: "GET",
+                url: "./updateLike.php",
+                data: {
+                    id: gameId
+                },
+                success: function(data) {
+                    if (!isNaN(data)) {
+                        game_count_like.text(data);
+                    } else {
+                        console.error(data);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error(status + ": " + error);
+                }
+            });
+        }
+
+
+        // CELUI LA UPDATE EN TEMPS REEL AU CLIC SANS REFRESH LA PAGE
+        // function update() {
+        //     var game_id = $(event.target).closest('.game-id').data('game-id');
+        //     var game_count_like = $(event.target).closest('.game-like').find('.game-count-like');
+
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "./updateLike.php",
+        //         data: {
+        //             id: game_id
+        //         },
+        //         success: function(data) {
+        //             if (!isNaN(data)) {
+        //                 game_count_like.text(data);
+        //             } else {
+        //                 console.error(data);
+        //             }
+        //         },
+        //         error: function(xhr, status, error) {
+        //             console.error(status + ": " + error);
+        //         }
+        //     });
+        // }
+
+
+        </script>
     </div>
 </body>
 </html>
