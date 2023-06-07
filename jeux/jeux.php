@@ -116,24 +116,7 @@
         }
         ?>
         <script>
-            // LA OU JE DOIS JQUERRY !!!!!
-        // function update () {
-
-        //     $.ajax({
-        //         type: "GET",
-        //         url: "./updateLike.php",
-                
-        //         success: function(data) {
-        //             // je dois traiter les datas ici
-
-        //             console.log(data);
-        //         },
-        //         error: function(xhr, status, error) {
-        //             // je sais pas ce que j'écris encore ici
-        //             console.error(status + ": " + error);
-        //         }
-        //     });
-        // }
+        // LA OU JE DOIS JQUERRY !!!!!
 
         // CELUI LA MARCHE
 
@@ -160,33 +143,6 @@
                 }
             });
         }
-
-
-        // CELUI LA UPDATE EN TEMPS REEL AU CLIC SANS REFRESH LA PAGE
-        // function update() {
-        //     var game_id = $(event.target).closest('.game-id').data('game-id');
-        //     var game_count_like = $(event.target).closest('.game-like').find('.game-count-like');
-
-        //     $.ajax({
-        //         type: "GET",
-        //         url: "./updateLike.php",
-        //         data: {
-        //             id: game_id
-        //         },
-        //         success: function(data) {
-        //             if (!isNaN(data)) {
-        //                 game_count_like.text(data);
-        //             } else {
-        //                 console.error(data);
-        //             }
-        //         },
-        //         error: function(xhr, status, error) {
-        //             console.error(status + ": " + error);
-        //         }
-        //     });
-        // }
-
-
         </script>
     </div>
 </body>
