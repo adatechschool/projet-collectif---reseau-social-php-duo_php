@@ -8,10 +8,10 @@
     <title>NavBar</title>
 </head>
 <body>
-    <nav>
+<nav>
         <ul class="nav_accueil">
-            <a href="/projet-collectif---reseau-social-php-duo_php/accueil/accueil.php"><img class="icone_jeux" src="/projet-collectif---reseau-social-php-duo_php/images/jeu-de-plateau.png" alt="Icône Jeux"></a>
-            <li><a href="/projet-collectif---reseau-social-php-duo_php/accueil/accueil.php">Accueil</a></li>
+            <a href="../../accueil/accueil.php"><img class="icone_jeux" src="../../images/jeu-de-plateau.png" alt="Icône Jeux"></a>
+            <li><a href="../../accueil/accueil.php">Accueil</a></li>
             <li id ="bienvenue">
                 <?php
                 session_start();
@@ -23,12 +23,12 @@
             </li>
         </ul>
         <ul class="nav_profil">
-            <li><a href="/projet-collectif---reseau-social-php-duo_php/jeux/jeux.php">Jeux de Société</a></li>
-            <li><a href ="/projet-collectif---reseau-social-php-duo_php/accueil/profil/profil.php">Mon profil</a></li>
+            <li><a href="../../jeux/jeux.php">Jeux de Société</a></li>
+            <li><a href ="../../accueil/profil/profil.php">Mon profil</a></li>
              
         <a href="../deconnexion.php">
             <button id="deconnexion"> 
-                <img src="/projet-collectif---reseau-social-php-duo_php/images/icon_off.png" alt="icone off">
+                <img src="../../images/icon_off.png" alt="icone off">
                 Deconnexion
             </button>
         </a>
