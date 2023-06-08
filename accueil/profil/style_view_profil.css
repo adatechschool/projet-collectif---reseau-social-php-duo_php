@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,500;1,800&display=swap');
+
+body {
+    /* background-color: #E7EFEF;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    height: 100vh;
+    margin: 0;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+.profil {
+    background-color: #C4DEDE;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    display: flex;
+    font-family: 'Barlow Condensed', sans-serif;
+    margin-top: 50px;
+    margin-bottom: auto;
+    margin-left: 50px;
+    margin-right: auto;
+}
+
+.photo {
+    width: 50%;
+}
+
+.info_du_profil {
+    width: 50%;
+    padding-left: 20px;
+}
+
+.titre {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.follow {
+    margin-top: 20px;
+}
+
+.follow button {
+    background-color: #3C4F4F;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    margin-left: 50px;
+}
+
+.follow button a {
+    text-decoration: none;
+    color: white;
+}
+
+.follow button:hover {
+    background-color: #477070;
+}
+
+/* .Info_perso_ajout {
+    background-color: #C4DEDE;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 600px;
+}
+
+.Info_perso_ajout label {
+    font-weight: bold;
+    margin-bottom: 10px;
+} */
+
+.Info_perso_ajout input[type="text"],
+.Info_perso_ajout textarea {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+.Info_perso_ajout input[type="submit"] {
+    background-color: #3C4F4F;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 95%;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+}
+
+.Info_perso_ajout input[type="submit"]:hover {
+    background-color: #477070;
+}
