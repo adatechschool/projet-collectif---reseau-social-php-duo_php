@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,500;1,800&display=swap');
+
+body {
+  
+    background-color: #E7EFEF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+.inscription {
+    
+    background-color: #C4DEDE;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+input[type="submit"] {
+    background-color: #3C4F4F;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 95%;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+}
+
+input[type="submit"]:hover {
+    background-color: #477070;
+}
+
+.message {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: black;
+}
