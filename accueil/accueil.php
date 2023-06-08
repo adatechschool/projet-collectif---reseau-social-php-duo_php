@@ -29,25 +29,7 @@
             ?>
         </div>
 
-        <!-- <div class="main_posts"> 
-            <div class="container_newpost">
-                    <div class="newPost_headline">
-                        Quelque chose à partager ?<br>
-                        <form id = "newPost" action="">
-                            <input type="text" name="newPost" placeholder="Ma participation ajd ...">
-                            <input type="submit" value="Publier"></input>
-                        </form>
-                    </div>    
-            </div>
-            <div class="posts">
-                <div class="post">
-                    Ici un post
-                </div> 
-                <div class="post">
-                    Ici un autre post
-                </div>
-            </div>
-        </div> -->
+       
         <div class="search_bar">
             <strong>Rechercher un ami :</strong>  
             <?php

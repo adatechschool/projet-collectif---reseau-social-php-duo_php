@@ -67,36 +67,6 @@
         while ($game = $result_game->fetch(PDO::FETCH_ASSOC))
         {
         ?>
-        
-        <!-- <div class="game-box">
-            <div class="game-id" data-game-id="<?php echo $game['id']; ?>"></div>
-                <div class="details_jeu">
-                    <h3 class="game-name">Nom du jeu : <?php echo $game['nom'] ?></h3>
-                    <img class="game-img" src="./uploads/<?= $game['image_url'] ?>">
-                    <p class="nb-min-player">Nombre minimum de joueurs : <?php echo $game['nb_min_joueurs']?></p>
-                    <p class="nb-max-player">Nombre maximum de joueurs : <?php echo $game['nb_max_joueurs']?></p>
-                    <p class="game-time">Temps de jeu estimé : <?php echo $game['temps_de_jeux']?></p>
-                    <p class="game-niveau">Difficulté du jeu : <?php echo $game['niveau']?></p>
-                        <div class="game-description">Description : <br><?php echo $game['content']?></div>
-                            <form method="POST" action="addToCollection.php">
-                                <input type="hidden" name="nom" value="<?php echo $game['nom']; ?>">
-                                <input type="hidden" name="nb_min_joueurs" value="<?php echo $game['nb_min_joueurs']; ?>">
-                                <input type="hidden" name="nb_max_joueurs" value="<?php echo $game['nb_max_joueurs']; ?>">
-                                <input type="hidden" name="temps_de_jeux" value="<?php echo $game['temps_de_jeux']; ?>">
-                                <input type="hidden" name="niveau" value="<?php echo $game['niveau']; ?>">
-                                <input type="hidden" name="content"value="<?php echo $game['content']; ?>">
-                                <input type="hidden" name="my_image" value="<?php echo $game['image_url'] ?>" >
-                                <button class="btn_add" type="submit">Ajouter à ma collection</button>
-                            </form>
-                        <div class="game-like">
-                            <p class="game-count-like"> <?php echo $game['liked'] ?> </p>
-                            <button class="game-button" type="button" name="like" onclick="update()">
-                                <img class="game-like-img" src="../images/like.png" alt="symbole like"/>
-                            </button>
-                        </div>
-                </div>
-            </div>
-        </div> -->
 
         <div class="game-box">
             <div class="game-id" data-game-id="<?php echo $game['id']; ?>">
