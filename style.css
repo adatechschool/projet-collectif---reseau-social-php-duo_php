@@ -57,6 +57,10 @@ font-family: 'Barlow Condensed', sans-serif;
   font-size: 18px;
 }
 
+/* button a {
+  style: none;
+} */
+
 button:hover {
 background-color: #477070;
 }

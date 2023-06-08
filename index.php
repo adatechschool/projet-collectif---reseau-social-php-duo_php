@@ -13,8 +13,8 @@
         <p>Bienvenue sur le premier réseau social consacré aux amoureux des jeux de société!</p>
         <p>Découvrez des tonnes de jeux de société et une communauté incroyable d'amateurs passionnés de jeux en tout genre.</p>
         <div class="button_container">
-            <button class="inscription"><a href="./inscription/inscription.php">Inscription</a></button>
-            <button class="connexion"><a href="./connexion/connexion.php">Connexion</a></button>
+            <button class="inscription"><a style="text-decoration: none; color: white;" href="./inscription/inscription.php">Inscription</a></button>
+            <button class="connexion"><a style="text-decoration: none; color: white;" href="./connexion/connexion.php">Connexion</a></button>
         </div>
     </div>
     <?php
