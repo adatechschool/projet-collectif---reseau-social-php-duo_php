@@ -1,5 +1,9 @@
 <?php 
+
+session_start();
 include "../connectdatabase.php";
+
+
 
 $nom = $_POST["nom"];
 $prenom = $_POST["prenom"];
@@ -9,7 +13,8 @@ $mdp = $_POST["mdp"];
 // Vérifier si tous les champs sont remplis
 if (empty($nom) || empty($prenom) || empty($mail) || empty($mdp)) {
     $message = "Tous les champs doivent être remplis.";
-    $redirectScript = '<script>setTimeout(function() {window.location.href = "../inscription/inscription.php";}, 1500);</script>'; 
+    
+    // $redirectScript = '<script>setTimeout(function() {window.location.href = "../inscription/inscription.php";}, 1500);</script>'; 
 
 } else {
 
@@ -20,7 +25,7 @@ if (empty($nom) || empty($prenom) || empty($mail) || empty($mdp)) {
 
     if ($emailExists) {
         $message = "Cet e-mail est déjà enregistré. Veuillez utiliser un autre e-mail.";
-        $redirectScript = '<script>setTimeout(function() {window.location.href = "../inscription/inscription.php";}, 1500);</script>';
+        // $redirectScript = '<script>setTimeout(function() {window.location.href = "../inscription/inscription.php";}, 1500);</script>';
 
     } else {
       
@@ -42,14 +47,16 @@ if (empty($nom) || empty($prenom) || empty($mail) || empty($mdp)) {
 
 <!-- Afficher le message d'erreur -->
 <?php 
-if (isset($message))
-{
+// if (isset($message))
+// {
   
-  echo '<font color ="red">'.$message."</font>";
- }
+//   echo '<font color ="red">'.$message."</font>";
+//  }
 ?>
 
-<?php echo $redirectScript; ?>
+<?php 
+// echo $redirectScript; 
+?>
 
 <!-- <script>
     setTimeout(function() {

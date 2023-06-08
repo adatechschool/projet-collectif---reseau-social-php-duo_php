@@ -58,3 +58,17 @@ input[type="submit"]:hover {
     background-color: #477070;
 }
 
+.message {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: black;
+}
+

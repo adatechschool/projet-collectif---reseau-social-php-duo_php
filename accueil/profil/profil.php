@@ -78,10 +78,11 @@ else {
 
     while ($data = $req->fetch()) {
         // var_dump($data);
+        
         $cheminPhoto = $data['photo'];
         echo "<img src='".$cheminPhoto."' width='300px'>";
-        
     }
+        
         ?>
     </div>
 
@@ -92,6 +93,7 @@ else {
             echo "Prénom : ".$utilisateurs["prenom"].'</br>';
             echo "Nom : ".$utilisateurs["nom"].'</br>';
             echo "Adresse Mail : ".$utilisateurs["mail"].'</br>';
+            
             ?>
 
             <form action="modification.php" method="post">

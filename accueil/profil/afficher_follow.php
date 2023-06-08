@@ -31,7 +31,7 @@
     echo"</div>";
     
 } else {
-    echo "Aucun follower trouvé.";
+    echo "</br>Aucun followee trouvé.";
 }
 
 // Récupérer les données des followers depuis la base de données
@@ -60,7 +60,7 @@ while ($row = $reqFollower->fetch()) {
 echo "</ul>";
 echo"</div>";
 } else {
-echo "Aucun follower trouvé.";
+echo "</br>Aucun follower trouvé.";
 }
 
 ?>

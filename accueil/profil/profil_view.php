@@ -8,6 +8,7 @@ define('PRENOM', "prenom");
 define('MAIL', "mail");
 define ('GET_ID', "id");
 
+
 $utilisateurs = [];
 
 if(isset($_GET[GET_ID])) {
@@ -22,7 +23,8 @@ if(isset($_GET[GET_ID])) {
             NOM => $dataUser[NOM],
             PRENOM => $dataUser[PRENOM],
             MAIL => $dataUser[MAIL],
-            GET_ID =>$currentId 
+            GET_ID =>$currentId ,
+            
         ];
     }
 }
@@ -31,9 +33,11 @@ else {
         NOM => $_SESSION[NOM],
         PRENOM => $_SESSION[PRENOM],
         MAIL => $_SESSION[MAIL],
-        GET_ID =>$_SESSION[GET_ID]
+        GET_ID =>$_SESSION[GET_ID],
+        
     ];
 }
+
 
 ?>
 
@@ -45,7 +49,7 @@ else {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="style_profil.css"> -->
     <link rel="stylesheet" href="../../style_navbar.css">
-    <link rel="stylesheet" href="style_view_profil.css">
+    <link rel="stylesheet" href="./style_view_profil.css">
     <title>Profil</title>
 </head>
 <body>
@@ -70,12 +74,38 @@ else {
         </form> -->
 
         <?php 
-            $req = $conn->query('SELECT photo FROM photo');
-            while($data = $req->fetch()){
-                // var_dump($data);
-            echo "<img src='uploads/".$data['photo']."' width='300px' ><br>";
-            }
+            // $req = $conn->query('SELECT photo FROM photo');
+            // while($data = $req->fetch()){
+            //     // var_dump($data);
+            // echo "<img src='uploads/".$data['photo']."' width='300px' ><br>";
+            // }     
+
+            // if ($utilisateurs[PHOTO]) {
+            //     echo "<img src='".$utilisateurs[PHOTO]."' width='300px'><br>";
+            // }
+            // echo "<img src='".$cheminPhoto."' width='300px'>";
+
+            // $req = $conn->prepare('SELECT photo FROM users WHERE id = :currentId');
+            // $req->bindValue(':currentId', $currentId);
+            // $req->execute();
+
+
+    // while($data = $req->fetch()){
+    // $cheminPhoto = $data['photo'];
+    
+    // // Vérifier la taille des données binaires
+    // $taillePhoto = strlen($cheminPhoto);
+    
+//     if ($taillePhoto > 0) {
+//         echo"photo";
+//         echo "<img src='data:image/jpeg;base64," . base64_encode($cheminPhoto) . "' width='300px'><br>";
+//     } else {
+//         echo "Aucune image disponible";
+//     }
+// }
+
         ?>
+        
     </div>
 
     <div class="info_du_profil">  <br>
@@ -83,10 +113,17 @@ else {
     <p>
         <?php 
         // include "../../connectdatabase.php";
+        // include "./afficher_photo.php";
+        
         
         echo "Prénom : ".$utilisateurs["prenom"].'</br>';
         echo "Nom : ".$utilisateurs["nom"].'</br>';
         echo "Adresse Mail : ".$utilisateurs["mail"].'</br>';
+        // Utiliser la fonction pour afficher les photos
+        // $req = $conn->query('SELECT photo FROM photo');
+        // afficherPhotos($req);
+        // echo "photo: ".$utilisateurs["photo"].'</br>';
+        
         ?>
     </p>
         <!-- <form action="modification.php" method="post">
@@ -106,11 +143,11 @@ if(isset($_SESSION['id']) AND $_SESSION['id']!=GET_ID){ // permet d'afficher le 
     if($isFolloweeOrNot==1){
 
 ?>
-<button class="unfollow"><a href="./follow.php?followedid=<?php echo $currentId ;?>">Unfollow</a></button>
+<a href="./follow.php?followedid=<?php echo $currentId ;?>"><button class="unfollow">Unfollow</button></a>
 <?php } 
 else {
 ?>
-<button class="follow_me"><a href="./follow.php?followedid=<?php echo $currentId ;?>">Follow Me</a></button>
+<a href="./follow.php?followedid=<?php echo $currentId ;?>"><button class="follow_me">Follow Me</button></a>
 <?php }
 } ?>
 </div>
