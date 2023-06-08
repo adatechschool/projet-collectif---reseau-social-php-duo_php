@@ -61,7 +61,7 @@ else {
                 <div class ="photo">
                     <form action="upload.php" method="POST" enctype="multipart/form-data" >
                         <label for="file"> <strong> Photo de profil </strong><br></label>
-                        <input type="file" name="file">
+                        <input type="file" name="file"><br>
                         <button class="btn_choose" type="submit">Enregistrer</button>
                     </form>
 
@@ -88,7 +88,7 @@ else {
                     echo "Nom : ".$utilisateurs["nom"].'</br>';
                     echo "Adresse Mail : ".$utilisateurs["mail"].'</br>';
                     ?>
-
+                    mdp : ******
                     <div class="modif">
                         <form action="modification.php" method="post">
                             <button id="btn_modif">
@@ -103,39 +103,59 @@ else {
             
             <div class="Info_perso_ajout">
                 <h3>Informations complémentaires : </h3>
-                <form method="post" action="traitement.php">
+                
+
+                
                     <p>
                         <label for="pseudo">Ton pseudo:</label>
-                        <input type="text" name="pseudo" id="pseudo" placeholder="Ex : luludu44" size="30" maxlength="10"/>
+                        <?php 
+                        $comp="SELECT pseudo FROM users WHERE id=$id";
+                        $result=$conn->query($comp);
+                        foreach($result as $row){
+                        echo $row['pseudo'];
+                        }
+                        ?>
+                        <!-- <input type="text" name="pseudo" id="pseudo" placeholder="Ex : luludu44" size="30" maxlength="10"/> -->
                     </p>
-                </form>
-
-                <form method="post" action="traitement.php">
+            
                     <p>
                         <label for="biographie">Biographie</label><br/>
-                        <textarea name="ameliorer" id="ameliorer" rows="10" cols="50">
-                        Qui es-tu?
-                        </textarea>
+                        <?php 
+                        $comp="SELECT bio FROM users WHERE id=$id";
+                        $result=$conn->query($comp);
+                        foreach($result as $row){
+                        echo $row['bio'];
+                        }
+                        ?>
                     </p>
-                </form>
-
-                <form method="post" action="Niveau.php">
-                    <label for="level-select">Quel est ton niveau de jeu ?</label>
-                    <select name="niveau" id="">
-                        <option value="">--</option>
-                        <option value="">Débutant</option>
-                        <option value="">Initié</option>
-                        <option value="">Archi-FAN !</option>
-                    </select>
-                    <input type="submit" class="btn_choose" value="Valider">
-                </form>
-
-                <form method="post" action="traitement.php">
+                
+                    <!-- <label for="level-select">Quel est ton niveau de jeu ?</label> -->
+                    <?php 
+                        $comp="SELECT niveau FROM users WHERE id=$id";
+                        $result=$conn->query($comp);
+                        foreach($result as $row){
+                        echo $row['niveau'];
+                        }
+                        ?>
                     <p>
-                    <label for="pseudo">Ta ville:</label>
-                    <input type="text" name="pseudo" id="pseudo" placeholder="Ex : Paris" size="30" maxlength="10"/>
+                    <label for="ville">Ta ville:</label>
+                    <?php 
+                        $comp="SELECT ville FROM users WHERE id=$id";
+                        $result=$conn->query($comp);
+                        foreach($result as $row){
+                        echo $row['ville'];
+                        }
+                        ?>
                     </p>
-                </form>
+                
+
+                <div class="modif">
+                        <form action="modification_complement.php" method="post">
+                            <button id="btn_modif">
+                                <img src="./modify_icon.png" alt="">
+                            </button>
+                        </form> 
+                    </div>
             </div>
         </div>
     

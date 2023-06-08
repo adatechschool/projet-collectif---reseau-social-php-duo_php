@@ -24,7 +24,8 @@
                     <p>Prénom : <br><input type="text" name="newPrenom" class="newInput"></p>
                     <p>Nom : <br><input type="text" name="newNom" class="newInput"></p>   
                     <p>Mail : <br><input type="text" name="newMail" class="newInput"></p>
-                    <p><input type="submit" value="Valider"></p>
+                    <p>Mot de passe : <br><input type="text" name="newMdp" class="newInput"></p>
+                    <p><input class="btn_choose" type="submit" value="Valider"></p>
                     </form> 
                 </div>
             </div>
