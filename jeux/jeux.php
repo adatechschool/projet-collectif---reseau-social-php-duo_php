@@ -90,8 +90,8 @@
                             </form>
                         <div class="game-like">
                             <p class="game-count-like"> <?php echo $game['liked'] ?> </p>
-                            <button class="game-button" type="button" name="like" onclick="update()">
-                                <img class="game-like-img" src="../images/like.png" alt="symbole like"/>
+                            <button class="game-button" type="button" name="like" style="height: 100px; width: 100px;" onclick="update()">
+                                <img class="game-like-img" style="height: 80px; width: 80px;" src="../images/like.png" alt="symbole like"/>
                             </button>
                         </div>
                 </div>

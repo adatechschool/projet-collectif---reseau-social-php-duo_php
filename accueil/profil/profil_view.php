@@ -36,7 +36,6 @@ else {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="style_profil.css"> -->
-    <link rel="stylesheet" href="../../style_navbar.css">
     <link rel="stylesheet" href="style_view_profil.css">
     <title>Profil</title>
 </head>
@@ -48,13 +47,10 @@ else {
 </div>
 <div class="profil">
     <div class="photo">
-        <!-- <form action="upload.php" method="POST" enctype="multipart/form-data">
-            <label for="file">Fichier</label>
-            <input type="file" name="file">
-            <button type="submit">Enregistrer</button>
-        </form> -->
+       
         <?php
-        $id=$_SESSION['id'];
+        // $id=$_SESSION['id'];
+        $id = $resultat['id'];
         $req = $conn->prepare('SELECT photo FROM users WHERE id = :id');
         $req->bindValue(':id', $id);
         $req->execute();
@@ -64,7 +60,7 @@ else {
             echo "<img src='".$cheminPhoto."' width='300px'>";
         }
         ?>
-    </div> -->
+    </div>
     <div class="info_du_profil">  <br>
     <titre>Informations de profil</titre>
     <p>
