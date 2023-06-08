@@ -64,7 +64,7 @@ else {
             echo "<img src='".$cheminPhoto."' width='300px'>";
         }
         ?>
-    </div>
+    </div> -->
     <div class="info_du_profil">  <br>
     <titre>Informations de profil</titre>
     <p>
