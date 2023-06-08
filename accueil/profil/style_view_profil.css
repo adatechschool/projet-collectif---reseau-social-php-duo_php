@@ -3,12 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,500;1,800&display=swap');
 
 body {
-    background-color: #E7EFEF;
+    /* background-color: #E7EFEF;
     display: flex;
     /* justify-content: center;
     align-items: center; */
     height: 100vh;
-    margin: 0;
+    margin: 0; */
     font-family: 'Barlow Condensed', sans-serif;
 }
 .profil {
@@ -16,10 +16,13 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    width: 600px;
+    width: 400px;
     display: flex;
-    /* margin-top: auto; */
-  /* margin-bottom: auto; */
+    font-family: 'Barlow Condensed', sans-serif;
+    margin-top: 50px;
+    margin-bottom: auto;
+    margin-left: 50px;
+    margin-right: auto;
 }
 
 .photo {
@@ -50,6 +53,7 @@ body {
     cursor: pointer;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 15px;
+    margin-left: 50px;
 }
 
 .follow button a {
@@ -61,7 +65,7 @@ body {
     background-color: #477070;
 }
 
-.Info_perso_ajout {
+/* .Info_perso_ajout {
     background-color: #C4DEDE;
     padding: 20px;
     border-radius: 10px;
@@ -73,7 +77,7 @@ body {
 .Info_perso_ajout label {
     font-weight: bold;
     margin-bottom: 10px;
-}
+} */
 
 .Info_perso_ajout input[type="text"],
 .Info_perso_ajout textarea {
